@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
+import Canvas from './Canvas/Canvas.js';
+import Control from './Control/Control.js';
 import './App.css';
 
 class App extends Component {
+  state = {
+    canvas: {
+      "background-color": "blue"
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <div className="block">Canvas</div>
-        <div className="block">Tools</div>
+        <Canvas/>
+        <Control/>
       </div>
     );
   }
