@@ -54,6 +54,10 @@ class App extends Component {
     this.setState(newState);
   }
 
+  deletePiece = () => {
+    console.log('delete');
+  }
+
   render() {
     return (
       <div className="App">
@@ -62,6 +66,7 @@ class App extends Component {
           saveBackgroundColorField={this.saveBackgroundColorField}
           resetBackgroundColorField={this.resetBackgroundColorField}
           addNewPiece={this.addNewPiece}
+          deletePiece={this.deletePiece}
           currentPieces={this.state.pieces}
           pieceTypes={pieceTypes}
           />

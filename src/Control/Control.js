@@ -15,7 +15,7 @@ class Control extends Component {
         </div>
 
         {this.props.currentPieces.map((thisPiece, i) => {
-          return <PieceOption piece={thisPiece} key={i}/>;
+          return <PieceOption piece={thisPiece} key={i} deletePiece={this.props.deletePiece}/>;
         })}
 
         <div>
