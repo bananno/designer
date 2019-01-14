@@ -8,8 +8,7 @@ class PieceOption extends Component {
   render() {
     return (
       <div className="pieceOption">
-        Type: {this.props.piece.type}
-        <br/>
+        <b>{this.props.piece.type}</b><br/>
         <button onClick={this.deletePiece}>delete</button>
       </div>
     );

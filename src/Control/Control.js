@@ -14,10 +14,6 @@ class Control extends Component {
           <button onClick={this.props.resetBackgroundColorField}>cancel</button>
         </div>
 
-        {this.props.currentPieces.map((thisPiece, i) => {
-          return <PieceOption piece={thisPiece} key={i} deletePiece={this.props.deletePiece}/>;
-        })}
-
         <div>
           Add new piece:
           <select id="addNewPieceType">
@@ -27,6 +23,10 @@ class Control extends Component {
           </select>
           <button onClick={this.props.addNewPiece}>add</button>
         </div>
+
+        {this.props.currentPieces.map((thisPiece, i) => {
+          return <PieceOption piece={thisPiece} key={i} deletePiece={this.props.deletePiece}/>;
+        })}
       </div>
     );
   }
