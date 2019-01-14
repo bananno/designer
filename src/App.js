@@ -5,7 +5,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        Designer
+        <div class="block">Canvas</div>
+        <div class="block">Tools</div>
       </div>
     );
   }
