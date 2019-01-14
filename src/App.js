@@ -48,12 +48,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Canvas style={this.state.canvas} pieces={this.state.pieces}/>
         <Control style={this.state.canvas}
           changeBackgroundColor={this.changeBackgroundColor}
           saveBackgroundColorField={this.saveBackgroundColorField}
           resetBackgroundColorField={this.resetBackgroundColorField}
-          pieceTypes={pieceTypes}/>
+          pieceTypes={pieceTypes}
+          />
+        <Canvas
+          style={this.state.canvas}
+          pieces={this.state.pieces}
+          />
       </div>
     );
   }
