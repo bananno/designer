@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PieceOption from './PieceOption.js';
 
 class Control extends Component {
   render() {
@@ -12,6 +13,11 @@ class Control extends Component {
           <button onClick={this.props.saveBackgroundColorField}>save</button>
           <button onClick={this.props.resetBackgroundColorField}>cancel</button>
         </div>
+
+        {this.props.currentPieces.map((thisPiece, i) => {
+          return <PieceOption piece={thisPiece} key={i}/>;
+        })}
+
         <div>
           Add new piece:
           <select id="addNewPieceType">

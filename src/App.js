@@ -62,6 +62,7 @@ class App extends Component {
           saveBackgroundColorField={this.saveBackgroundColorField}
           resetBackgroundColorField={this.resetBackgroundColorField}
           addNewPiece={this.addNewPiece}
+          currentPieces={this.state.pieces}
           pieceTypes={pieceTypes}
           />
         <Canvas
