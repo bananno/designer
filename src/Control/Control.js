@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 
 class Control extends Component {
   render() {
+    var bodyBackgroundColor = this.props.style['body-background-color-input'];
     return (
       <div className="block">
         <h1>Controls</h1>
         <div>
           Body background color:
-          <input value="blue"/>
+          <input value={bodyBackgroundColor} onChange={this.props.changeBackgroundColor}/>
         </div>
       </div>
     );

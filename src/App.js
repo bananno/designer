@@ -6,15 +6,24 @@ import './App.css';
 class App extends Component {
   state = {
     canvas: {
-      "body-background-color": "blue"
+      "body-background-color": "blue",
+      "body-background-color-input": "blue"
     }
+  }
+
+  changeBackgroundColor = (e) => {
+    var newCanvasStyle = this.state.canvas;
+    newCanvasStyle['body-background-color-input'] = e.target.value;
+    this.setState({
+      canvas: newCanvasStyle
+    });
   }
 
   render() {
     return (
       <div className="App">
         <Canvas style={this.state.canvas}/>
-        <Control/>
+        <Control style={this.state.canvas} changeBackgroundColor={this.changeBackgroundColor}/>
       </div>
     );
   }
