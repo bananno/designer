@@ -6,14 +6,14 @@ import './App.css';
 class App extends Component {
   state = {
     canvas: {
-      "background-color": "blue"
+      "body-background-color": "blue"
     }
   }
 
   render() {
     return (
       <div className="App">
-        <Canvas/>
+        <Canvas style={this.state.canvas}/>
         <Control/>
       </div>
     );
