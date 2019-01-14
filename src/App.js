@@ -52,7 +52,8 @@ class App extends Component {
         <Control style={this.state.canvas}
           changeBackgroundColor={this.changeBackgroundColor}
           saveBackgroundColorField={this.saveBackgroundColorField}
-          resetBackgroundColorField={this.resetBackgroundColorField}/>
+          resetBackgroundColorField={this.resetBackgroundColorField}
+          pieceTypes={pieceTypes}/>
       </div>
     );
   }
