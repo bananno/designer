@@ -45,11 +45,11 @@ class App extends Component {
     });
   }
 
-  addNewPiece = (pieceType) => {
+  addNewPiece = () => {
     var newState = this.state;
+    var pieceType = document.getElementById('addNewPieceType').value;
     newState.pieces.push({
-      // type: pieceType
-      type: 'title'
+      type: pieceType
     });
     this.setState(newState);
   }

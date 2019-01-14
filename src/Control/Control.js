@@ -14,7 +14,7 @@ class Control extends Component {
         </div>
         <div>
           Add new piece:
-          <select>
+          <select id="addNewPieceType">
             {this.props.pieceTypes.map((pieceType, i) => {
               return <option value={pieceType} key={i}>{pieceType}</option>;
             })}
