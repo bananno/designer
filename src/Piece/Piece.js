@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 
 class Piece extends Component {
   render() {
-    if (this.props.type == 'title') {
+    var pieceType = this.props.data.type;
+
+    if (pieceType == 'title') {
       return (
         <h1>TITLE</h1>
       );
     }
-    if (this.props.type == 'main-content') {
+    if (pieceType == 'main-content') {
       return (
         <div>MAIN CONTENT</div>
       );

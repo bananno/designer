@@ -11,6 +11,10 @@ const pieceTypes = [
 
 class App extends Component {
   state = {
+    pieces: [
+      { type: 'title' },
+      { type: 'main-content' }
+    ],
     canvas: {
       "body-background-color": "blue",
       "body-background-color-input": "blue"
@@ -44,7 +48,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Canvas style={this.state.canvas}/>
+        <Canvas style={this.state.canvas} pieces={this.state.pieces}/>
         <Control style={this.state.canvas}
           changeBackgroundColor={this.changeBackgroundColor}
           saveBackgroundColorField={this.saveBackgroundColorField}
