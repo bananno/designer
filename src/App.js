@@ -3,6 +3,12 @@ import Canvas from './Canvas/Canvas.js';
 import Control from './Control/Control.js';
 import './App.css';
 
+const pieceTypes = [
+  'title',
+  'main-content',
+  'logo',
+];
+
 class App extends Component {
   state = {
     canvas: {

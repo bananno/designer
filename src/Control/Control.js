@@ -12,6 +12,13 @@ class Control extends Component {
           <button onClick={this.props.saveBackgroundColorField}>save</button>
           <button onClick={this.props.resetBackgroundColorField}>cancel</button>
         </div>
+        <div>
+          Add new piece:
+          <select>
+            <option value="test">test</option>
+          </select>
+          <button>add</button>
+        </div>
       </div>
     );
   }

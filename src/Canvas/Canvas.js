@@ -6,8 +6,8 @@ class Canvas extends Component {
     var bodyBackgroundColor = this.props.style['body-background-color'];
     return (
       <div className="block" style={{"backgroundColor": bodyBackgroundColor}}>
-        <Piece/>
-        <Piece/>
+        <Piece type="title"/>
+        <Piece type="main-content"/>
       </div>
     );
   }
