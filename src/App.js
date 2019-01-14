@@ -19,11 +19,21 @@ class App extends Component {
     });
   }
 
+  resetBackgroundColorField = () => {
+    var newCanvasStyle = this.state.canvas;
+    newCanvasStyle['body-background-color-input'] = newCanvasStyle['body-background-color'];
+    this.setState({
+      canvas: newCanvasStyle
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <Canvas style={this.state.canvas}/>
-        <Control style={this.state.canvas} changeBackgroundColor={this.changeBackgroundColor}/>
+        <Control style={this.state.canvas}
+          changeBackgroundColor={this.changeBackgroundColor}
+          resetBackgroundColorField={this.resetBackgroundColorField}/>
       </div>
     );
   }

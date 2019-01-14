@@ -9,6 +9,7 @@ class Control extends Component {
         <div>
           Body background color:
           <input value={bodyBackgroundColor} onChange={this.props.changeBackgroundColor}/>
+          <button onClick={this.props.resetBackgroundColorField}>reset</button>
         </div>
       </div>
     );
