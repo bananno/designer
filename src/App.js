@@ -12,9 +12,16 @@ const pieceTypes = [
 class App extends Component {
   state = {
     pieces: [
-      { type: 'title' },
-      { type: 'content' }
+      {
+        type: 'title',
+        id: 0
+      },
+      {
+        type: 'content',
+        id: 1
+      }
     ],
+    pieceIdCount: 2,
     canvas: {
       "body-background-color": "blue",
       "body-background-color-input": "blue"
@@ -49,13 +56,19 @@ class App extends Component {
     var newState = this.state;
     var pieceType = document.getElementById('addNewPieceType').value;
     newState.pieces.push({
-      type: pieceType
+      type: pieceType,
+      id: this.state.pieceIdCount
     });
+    newState.pieceIdCount += 1;
     this.setState(newState);
   }
 
-  deletePiece = () => {
-    console.log('delete');
+  deletePiece = (deleteId) => {
+    var newState = this.state;
+    newState.pieces = newState.pieces.filter((thisPiece) => {
+      return thisPiece.id != deleteId;
+    });
+    this.setState(newState);
   }
 
   render() {
