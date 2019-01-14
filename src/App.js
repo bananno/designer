@@ -5,7 +5,7 @@ import './App.css';
 
 const pieceTypes = [
   'title',
-  'main-content',
+  'content',
   'logo',
 ];
 
@@ -13,7 +13,7 @@ class App extends Component {
   state = {
     pieces: [
       { type: 'title' },
-      { type: 'main-content' }
+      { type: 'content' }
     ],
     canvas: {
       "body-background-color": "blue",

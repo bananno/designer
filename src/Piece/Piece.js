@@ -9,14 +9,14 @@ class Piece extends Component {
         <h1>TITLE</h1>
       );
     }
-    if (pieceType == 'main-content') {
+    if (pieceType == 'content') {
       return (
-        <div>MAIN CONTENT</div>
+        <div>CONTENT</div>
       );
     }
     return (
       <div>
-        PIECE
+        PIECE (type = {pieceType})
       </div>
     );
   }
