@@ -45,6 +45,15 @@ class App extends Component {
     });
   }
 
+  addNewPiece = (pieceType) => {
+    var newState = this.state;
+    newState.pieces.push({
+      // type: pieceType
+      type: 'title'
+    });
+    this.setState(newState);
+  }
+
   render() {
     return (
       <div className="App">
@@ -52,6 +61,7 @@ class App extends Component {
           changeBackgroundColor={this.changeBackgroundColor}
           saveBackgroundColorField={this.saveBackgroundColorField}
           resetBackgroundColorField={this.resetBackgroundColorField}
+          addNewPiece={this.addNewPiece}
           pieceTypes={pieceTypes}
           />
         <Canvas

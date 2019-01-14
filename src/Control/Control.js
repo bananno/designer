@@ -19,7 +19,7 @@ class Control extends Component {
               return <option value={pieceType} key={i}>{pieceType}</option>;
             })}
           </select>
-          <button>add</button>
+          <button onClick={this.props.addNewPiece}>add</button>
         </div>
       </div>
     );
