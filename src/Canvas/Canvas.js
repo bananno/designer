@@ -8,6 +8,8 @@ class Canvas extends Component {
       <div className="block" id="canvas" style={{"backgroundColor": bodyBackgroundColor}}>
         {this.props.pieces.map((thisPiece, i) => {
           return <Piece data={thisPiece} key={i} editPieceText={this.props.editPieceText}
+            state={this.props.state}
+            setState={this.props.setState}
             showTools={this.props.showTools}
             reorderPieceItems={this.props.reorderPieceItems}/>
         })}

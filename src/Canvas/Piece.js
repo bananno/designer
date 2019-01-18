@@ -5,6 +5,20 @@ import Navigation from '../pieces/navigation.js';
 import Banner from '../pieces/banner.js';
 
 class Piece extends Component {
+  deletePiece = (pieceId) => {
+    var newState = this.props.state;
+
+    newState.pieces = newState.pieces.filter((thisPiece) => {
+      return thisPiece.id !== pieceId;
+    });
+
+    this.props.setState(newState);
+  }
+
+  pieceActions = {
+    delete: this.deletePiece,
+  }
+
   render() {
     var pieceType = this.props.data.type;
 
@@ -23,7 +37,7 @@ class Piece extends Component {
 
     if (pieceType === 'banner') {
       return (
-        <Banner data={this.props.data}/>
+        <Banner data={this.props.data} pieceActions={this.pieceActions}/>
       );
     }
 

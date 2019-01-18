@@ -204,6 +204,8 @@ class App extends Component {
           pieceTypes={pieceTypes}
           />
         <Canvas
+          state={this.state}
+          setState={this.setStateWrap}
           style={this.state.canvas}
           pieces={this.state.pieces}
           showTools={this.state.showTools}
