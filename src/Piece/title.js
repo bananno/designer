@@ -10,12 +10,17 @@ const title = (props) => {
     props.editPieceText(props.data.id, newText);
   }
 
+  const savePieceText = () => {
+    props.savePieceText(props.data.id);
+  }
+
   if (props.data.editing) {
     return (
       <div className="piece title">
         <div className="edit">
           <input value={props.data.textInput} onChange={editPieceText}/>
         </div>
+        <button onClick={savePieceText}>save</button>
         <button onClick={togglePieceEditing}>cancel</button>
       </div>
     );

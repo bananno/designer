@@ -10,6 +10,7 @@ class Canvas extends Component {
           return <Piece data={thisPiece} key={i}
             togglePieceEditing={this.props.togglePieceEditing}
             editPieceText={this.props.editPieceText}
+            savePieceText={this.props.savePieceText}
             />
         })}
       </div>

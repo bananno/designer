@@ -10,6 +10,7 @@ class Piece extends Component {
         <Title data={this.props.data}
           togglePieceEditing={this.props.togglePieceEditing}
           editPieceText={this.props.editPieceText}
+          savePieceText={this.props.savePieceText}
         />
       );
     }

@@ -65,6 +65,18 @@ class App extends Component {
     this.setState(newState);
   }
 
+  savePieceText = (pieceId) => {
+    let newState = this.state;
+    newState.pieces = newState.pieces.map((thisPiece) => {
+      if (thisPiece.id == pieceId) {
+        thisPiece.text = thisPiece.textInput;
+        thisPiece.editing = false;
+      }
+      return thisPiece;
+    });
+    this.setState(newState);
+  }
+
   changeBackgroundColor = (e) => {
     var newCanvasStyle = this.state.canvas;
     newCanvasStyle['body-background-color-input'] = e.target.value;
@@ -125,6 +137,7 @@ class App extends Component {
           pieces={this.state.pieces}
           togglePieceEditing={this.togglePieceEditing}
           editPieceText={this.editPieceText}
+          savePieceText={this.savePieceText}
           />
       </div>
     );
