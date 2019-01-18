@@ -17,6 +17,10 @@ class App extends Component {
         id: 0
       },
       {
+        type: 'navigation',
+        id: 2
+      },
+      {
         type: 'content',
         id: 1
       }
