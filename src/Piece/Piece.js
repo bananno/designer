@@ -9,22 +9,23 @@ class Piece extends Component {
         <h1 class="piece title">TITLE</h1>
       );
     }
+
     if (pieceType == 'navigation') {
       return (
-        <div>
-          <ul>
-            <li>item</li>
-            <li>item</li>
-            <li>item</li>
-          </ul>
-        </div>
+        <ul class="piece navigation">
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+        </ul>
       );
     }
+
     if (pieceType == 'content') {
       return (
         <div>CONTENT</div>
       );
     }
+
     return (
       <div>
         PIECE (type = {pieceType})

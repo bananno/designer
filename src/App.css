@@ -1,4 +1,8 @@
 
+body {
+    padding: 30px;
+}
+
 .block {
     display: inline-block;
     border: 1px solid black;
@@ -10,6 +14,7 @@
     padding: 0px;
     width: 600px;
     vertical-align: text-top;
+    margin-left: 30px;
 }
 
 .pieceOption {
@@ -19,4 +24,8 @@
 .piece.title {
     width: 100%;
     background-color: green;
+}
+
+.piece.navigation {
+    list-style: none;
 }
