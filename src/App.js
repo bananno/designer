@@ -40,12 +40,12 @@ class App extends Component {
     }
   }
 
-  editPieceTextToggleView = (pieceId) => {
+  editPieceTextToggleView = (pieceId, toggle) => {
     let newState = this.state;
     newState.pieces = newState.pieces.map((thisPiece) => {
       if (thisPiece.id == pieceId) {
-        thisPiece.editing = !(thisPiece.editing == true);
-        if (!thisPiece.editing) {
+        thisPiece.editing = toggle;
+        if (!toggle) {
           thisPiece.textInput = thisPiece.text;
         }
       }

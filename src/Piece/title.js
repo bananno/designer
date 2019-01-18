@@ -1,16 +1,20 @@
 import React from 'react';
 
 const title = (props) => {
-  const togglePieceEditing = () => {
-    props.editPieceText.toggleView(props.data.id);
+  const editTextStart = () => {
+    props.editPieceText.toggleView(props.data.id, true);
   };
 
-  const editPieceText = (e) => {
+  const editTextCancel = () => {
+    props.editPieceText.toggleView(props.data.id, false);
+  };
+
+  const editTextTypeInput = (e) => {
     let newText = e.target.value;
     props.editPieceText.changeInput(props.data.id, newText);
   }
 
-  const savePieceText = () => {
+  const editTextSave = () => {
     props.editPieceText.clickSave(props.data.id);
   }
 
@@ -18,10 +22,10 @@ const title = (props) => {
     return (
       <div className="piece title">
         <div className="edit">
-          <input value={props.data.textInput} onChange={editPieceText}/>
+          <input onChange={editTextTypeInput} value={props.data.textInput}/>
         </div>
-        <button onClick={savePieceText}>save</button>
-        <button onClick={togglePieceEditing}>cancel</button>
+        <button onClick={editTextSave}>save</button>
+        <button onClick={editTextCancel}>cancel</button>
       </div>
     );
   }
@@ -31,7 +35,7 @@ const title = (props) => {
       <div className="display">
         {props.data.text}
       </div>
-      <span className="edit-link" onClick={togglePieceEditing}>edit</span>
+      <span onClick={editTextStart} className="edit-link">edit</span>
     </div>
   );
 };
