@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Canvas from './Canvas/Canvas.js';
 import Control from './Control/Control.js';
 import './App.css';
+import './Piece/piece.css';
 
 const pieceTypes = [
   'title',
