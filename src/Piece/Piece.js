@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Title from './title.js';
+import Navigation from './navigation.js';
 
 class Piece extends Component {
   render() {
@@ -13,13 +14,7 @@ class Piece extends Component {
 
     if (pieceType === 'navigation') {
       return (
-        <div className="piece navigation">
-          <ul>
-            <li>item</li>
-            <li>item</li>
-            <li>item</li>
-          </ul>
-        </div>
+        <Navigation data={this.props.data}/>
       );
     }
 
