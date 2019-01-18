@@ -1,0 +1,18 @@
+
+.piece.title {
+  width: 100%;
+  background-color: green;
+}
+
+.piece.banner {
+  height: 200px;
+  background-color: orange;
+}
+
+.piece.navigation ul {
+  list-style: none;
+}
+
+.piece.navigation li {
+  display: inline-block;
+}
