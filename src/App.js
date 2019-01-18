@@ -8,6 +8,8 @@ const pieceTypes = [
   'title',
   'content',
   'logo',
+  'banner',
+  'navigation',
 ];
 
 class App extends Component {
