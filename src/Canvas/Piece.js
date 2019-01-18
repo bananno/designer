@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+
 import Title from '../pieces/title.js';
 import Navigation from '../pieces/navigation.js';
+import Banner from '../pieces/banner.js';
 
 class Piece extends Component {
   render() {
@@ -21,8 +23,7 @@ class Piece extends Component {
 
     if (pieceType === 'banner') {
       return (
-        <div className="piece banner"> </div>
-        // <img src="/designs/banner-bg.png"/>
+        <Banner data={this.props.data}/>
       );
     }
 
