@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import createPiece from '../helpers/createPiece.js';
+import pieceTypes from '../helpers/pieceTypes.js';
 
 class Control extends Component {
   getToggleTool = (toolName) => {
@@ -48,7 +49,7 @@ class Control extends Component {
         <div>
           Add new piece:
           <select id="addNewPieceType">
-            {this.props.pieceTypes.map((pieceType, i) => {
+            {pieceTypes.map((pieceType, i) => {
               return <option value={pieceType} key={i}>{pieceType}</option>;
             })}
           </select>

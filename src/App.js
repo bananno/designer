@@ -5,14 +5,6 @@ import createPiece from './helpers/createPiece.js';
 import './App.css';
 import './pieces/pieces.css';
 
-const pieceTypes = [
-  'title',
-  'content',
-  'logo',
-  'banner',
-  'navigation',
-];
-
 class App extends Component {
   state = {
     pieces: [
@@ -180,7 +172,6 @@ class App extends Component {
           saveBackgroundColorField={this.saveBackgroundColorField}
           resetBackgroundColorField={this.resetBackgroundColorField}
           currentPieces={this.state.pieces}
-          pieceTypes={pieceTypes}
           />
         <Canvas
           state={this.state}
