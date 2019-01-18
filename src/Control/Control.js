@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PieceOption from './PieceOption.js';
 
 class Control extends Component {
   getToggleTool = (toolName) => {
@@ -42,10 +41,6 @@ class Control extends Component {
           </select>
           <button onClick={this.props.addNewPiece}>add</button>
         </div>
-
-        {this.props.currentPieces.map((thisPiece, i) => {
-          return <PieceOption piece={thisPiece} key={i} deletePiece={this.props.deletePiece}/>;
-        })}
       </div>
     );
   }
