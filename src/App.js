@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Canvas from './Canvas/Canvas.js';
 import Control from './Control/Control.js';
 import './App.css';
-import './pieces/piece.css';
+import './pieces/pieces.css';
 
 const pieceTypes = [
   'title',
