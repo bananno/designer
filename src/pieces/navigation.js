@@ -1,5 +1,4 @@
 import React from 'react';
-import DeleteButton from './deleteButton.js';
 
 const navigation = (props) => {
   const pieceId = props.data.id;
@@ -50,7 +49,6 @@ const navigation = (props) => {
         })}
       </ul>
       {props.children}
-      <DeleteButton showDelete={props.showTools.delete} delete={props.pieceActions.delete}/>
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import React from 'react';
-import DeleteButton from './deleteButton.js';
 
 const title = (props) => {
   const editTextStart = () => {
@@ -37,7 +36,6 @@ const title = (props) => {
         {props.data.text}
       </div>
       <span onClick={editTextStart} className="edit-link">edit</span>
-      <DeleteButton showDelete={props.showTools.delete} delete={props.pieceActions.delete}/>
       {props.children}
     </div>
   );

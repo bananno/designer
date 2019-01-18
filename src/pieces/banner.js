@@ -1,5 +1,4 @@
 import React from 'react';
-import DeleteButton from './deleteButton.js';
 
 const banner = (props) => {
   let className = 'piece banner';
@@ -11,7 +10,6 @@ const banner = (props) => {
   return (
     <div className={className}>
       {props.children}
-      <DeleteButton showDelete={props.showTools.delete} delete={props.pieceActions.delete}/>
     </div>
   );
 };
