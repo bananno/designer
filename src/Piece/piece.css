@@ -1,4 +1,13 @@
 
+.piece .edit-link {
+  color: blue;
+}
+
+.piece .edit-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 /* TITLE */
 
 .piece.title {

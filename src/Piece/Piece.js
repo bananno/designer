@@ -6,7 +6,8 @@ class Piece extends Component {
     var pieceType = this.props.data.type;
 
     if (pieceType === 'title') {
-      return (<Title data={this.props.data}/>);
+      return (<Title data={this.props.data}
+        togglePieceEditing={this.props.togglePieceEditing}/>);
     }
 
     if (pieceType == 'navigation') {

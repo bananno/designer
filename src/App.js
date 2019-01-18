@@ -16,7 +16,7 @@ class App extends Component {
       {
         type: 'title',
         text: 'TITLE',
-        view: 'display',
+        editing: false,
         id: 0
       },
       {
@@ -37,6 +37,17 @@ class App extends Component {
       "body-background-color": "blue",
       "body-background-color-input": "blue"
     }
+  }
+
+  togglePieceEditing = (pieceId) => {
+    let newState = this.state;
+    newState.pieces = newState.pieces.map((thisPiece) => {
+      if (thisPiece.id == pieceId) {
+        thisPiece.editing = !(thisPiece.editing == true);
+      }
+      return thisPiece;
+    });
+    this.setState(newState);
   }
 
   changeBackgroundColor = (e) => {
@@ -97,6 +108,7 @@ class App extends Component {
         <Canvas
           style={this.state.canvas}
           pieces={this.state.pieces}
+          togglePieceEditing={this.togglePieceEditing}
           />
       </div>
     );
