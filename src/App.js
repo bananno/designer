@@ -180,14 +180,12 @@ class App extends Component {
       type: pieceType,
       id: this.state.pieceIdCount
     };
-    if (pieceType == 'banner') {
+    if (pieceType === 'banner') {
       newPiece.image = null;
-    }
-    if (pieceType == 'title') {
+    } else if (pieceType === 'title') {
       newPiece.text = 'TITLE';
       newPiece.textInput = 'TITLE';
-    }
-    if (pieceType == 'navigation') {
+    } else if (pieceType === 'navigation') {
       newPiece.items = ['Link Here'];
     }
     newState.pieces.push(newPiece);
