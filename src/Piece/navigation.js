@@ -1,12 +1,18 @@
 import React from 'react';
 
 const navigation = (props) => {
-  const onDragStart = () => {
-    props.reorderPieceItems.dragStart();
+  const pieceId = props.data.id;
+
+  const getDragStart = (index) => {
+    return () => {
+      props.reorderPieceItems.dragStart(pieceId, index);
+    };
   };
 
-  const onDragEnter = () => {
-    props.reorderPieceItems.dragEnter();
+  const getDragEnter = (index) => {
+    return () => {
+      props.reorderPieceItems.dragEnter(pieceId, index);
+    };
   };
 
   let itemSpread = [null];
@@ -16,14 +22,17 @@ const navigation = (props) => {
     itemSpread.push(null);
   });
 
+  let count = -1;
+
   return (
     <div className="piece navigation">
       <ul>
         {itemSpread.map((text, i) => {
           if (text == null) {
-            return (<li key={i} onDragEnter={onDragEnter}>*</li>);
+            count += 1;
+            return (<li key={i} onDragEnter={getDragEnter(count)}>*</li>);
           }
-          return (<li key={i} draggable="true" onDragStart={onDragStart}>{text}</li>);
+          return (<li key={i} draggable="true" onDragStart={getDragStart(count)}>{text}</li>);
         })}
       </ul>
     </div>
