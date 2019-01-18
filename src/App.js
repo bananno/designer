@@ -23,6 +23,7 @@ class App extends Component {
       {
         type: 'navigation',
         items: ['Home', 'Products', 'Services', 'Blog', 'Contact'],
+        dragging: null,
         id: 1
       },
       {
@@ -84,6 +85,19 @@ class App extends Component {
     clickSave: this.editPieceTextSave,
   }
 
+  dragPieceItemStart = (pieceId, dragIndex) => {
+    console.log('dragging ' + dragIndex);
+  }
+
+  dragPieceItemEnter = (pieceId, placeBefore) => {
+    console.log('place before ' + placeBefore);
+  }
+
+  reorderPieceItems = {
+    dragStart: this.dragPieceItemStart,
+    dragEnter: this.dragPieceItemEnter,
+  }
+
   changeBackgroundColor = (e) => {
     var newCanvasStyle = this.state.canvas;
     newCanvasStyle['body-background-color-input'] = e.target.value;
@@ -143,6 +157,7 @@ class App extends Component {
           style={this.state.canvas}
           pieces={this.state.pieces}
           editPieceText={this.editPieceText}
+          reorderPieceItems={this.reorderPieceItems}
           />
       </div>
     );
