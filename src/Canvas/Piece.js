@@ -24,27 +24,30 @@ class Piece extends Component {
 
     if (pieceType === 'title') {
       return (
-        <Title data={this.props.data} editPieceText={this.props.editPieceText}/>
+        <Title data={this.props.data}
+          editPieceText={this.props.editPieceText}
+          pieceActions={this.pieceActions}
+          showTools={this.props.showTools}
+          />
       );
     }
 
     if (pieceType === 'navigation') {
       return (
-        <Navigation data={this.props.data} reorderPieceItems={this.props.reorderPieceItems}
-          showTools={this.props.showTools}/>
+        <Navigation data={this.props.data}
+          reorderPieceItems={this.props.reorderPieceItems}
+          pieceActions={this.pieceActions}
+          showTools={this.props.showTools}
+          />
       );
     }
 
     if (pieceType === 'banner') {
       return (
-        <Banner data={this.props.data} pieceActions={this.pieceActions}
-          showTools={this.props.showTools}/>
-      );
-    }
-
-    if (pieceType === 'content') {
-      return (
-        <div>CONTENT</div>
+        <Banner data={this.props.data}
+          pieceActions={this.pieceActions}
+          showTools={this.props.showTools}
+          />
       );
     }
 
