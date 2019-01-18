@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Title from '../pieces/title.js';
 import Navigation from '../pieces/navigation.js';
 import Banner from '../pieces/banner.js';
+import DeleteButton from '../pieces/deleteButton.js';
 
 class Piece extends Component {
   deletePiece = () => {
@@ -21,7 +22,6 @@ class Piece extends Component {
 
   render() {
     const pieceType = this.props.data.type;
-    const showDelete = this.props.showTools.delete;
 
     if (pieceType === 'title') {
       return (
@@ -55,7 +55,7 @@ class Piece extends Component {
     return (
       <div>
         PIECE (type = {pieceType})
-        {showDelete ? <button onClick={this.pieceActions.delete}>delete</button> : null}
+        <DeleteButton showDelete={this.props.showTools.delete} delete={this.pieceActions.delete}/>
       </div>
     );
   }

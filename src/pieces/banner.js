@@ -1,8 +1,7 @@
 import React from 'react';
+import DeleteButton from './deleteButton.js';
 
 const banner = (props) => {
-  const showDelete = props.showTools.delete;
-
   let className = 'piece banner';
 
   if (props.data.image) {
@@ -11,7 +10,7 @@ const banner = (props) => {
 
   return (
     <div className={className}>
-      {showDelete ? <button onClick={props.pieceActions.delete}>delete</button> : null}
+      <DeleteButton showDelete={props.showTools.delete} delete={props.pieceActions.delete}/>
     </div>
   );
 };
