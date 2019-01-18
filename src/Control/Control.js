@@ -12,7 +12,7 @@ class Control extends Component {
   render() {
     var bodyBackgroundColor = this.props.style['body-background-color-input'];
     return (
-      <div className="block">
+      <div id="control">
         <h1>Controls</h1>
 
         <div>

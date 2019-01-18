@@ -3,7 +3,7 @@ body {
   padding: 30px;
 }
 
-.block {
+#control {
   display: inline-block;
   border: 1px solid black;
   padding: 30px;
@@ -11,6 +11,10 @@ body {
 }
 
 #canvas {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 30px;
+  vertical-align: text-top;
   padding: 0px;
   width: 600px;
   vertical-align: text-top;
