@@ -103,7 +103,7 @@ class App extends Component {
 
         let dragIndex = thisPiece.dragging;
 
-        if (placeBefore == dragIndex || placeBefore == dragIndex + 1) {
+        if (placeBefore === dragIndex || placeBefore === dragIndex + 1) {
           return thisPiece;
         }
 
@@ -111,11 +111,11 @@ class App extends Component {
 
         for (let i = 0; i <= thisPiece.items.length; i++) {
 
-          if (i == placeBefore) {
+          if (i === placeBefore) {
             newArray.push(thisPiece.items[dragIndex]);
           }
 
-          if (i == dragIndex) {
+          if (i === dragIndex) {
             continue;
           }
 
