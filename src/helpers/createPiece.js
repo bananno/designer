@@ -9,7 +9,7 @@ function createPiece(newPiece) {
     newPiece.textInput = newPiece.text;
     newPiece.editing = false;
   } else if (newPiece.type === 'navigation') {
-    newPiece.items = newPiece.items || [];
+    newPiece.items = newPiece.items || ['Link Here'];
     newPiece.dragging = null;
   } else if (newPiece.type === 'banner') {
     newPiece.image = newPiece.image || null;

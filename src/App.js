@@ -173,18 +173,10 @@ class App extends Component {
   addNewPiece = () => {
     var newState = this.state;
     var pieceType = document.getElementById('addNewPieceType').value;
-    let newPiece = {
+    let newPiece = createPiece({
       type: pieceType,
       id: this.state.pieceIdCount
-    };
-    if (pieceType === 'banner') {
-      newPiece.image = null;
-    } else if (pieceType === 'title') {
-      newPiece.text = 'TITLE';
-      newPiece.textInput = 'TITLE';
-    } else if (pieceType === 'navigation') {
-      newPiece.items = ['Link Here'];
-    }
+    });
     newState.pieces.push(newPiece);
     newState.pieceIdCount += 1;
     this.setState(newState);
