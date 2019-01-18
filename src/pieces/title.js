@@ -38,6 +38,7 @@ const title = (props) => {
       </div>
       <span onClick={editTextStart} className="edit-link">edit</span>
       <DeleteButton showDelete={props.showTools.delete} delete={props.pieceActions.delete}/>
+      {props.children}
     </div>
   );
 };

@@ -10,6 +10,7 @@ const banner = (props) => {
 
   return (
     <div className={className}>
+      {props.children}
       <DeleteButton showDelete={props.showTools.delete} delete={props.pieceActions.delete}/>
     </div>
   );

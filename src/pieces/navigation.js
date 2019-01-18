@@ -49,6 +49,7 @@ const navigation = (props) => {
           return (<li key={i} draggable="true" onDragStart={getDragStart(count)} className="item">{text}</li>);
         })}
       </ul>
+      {props.children}
       <DeleteButton showDelete={props.showTools.delete} delete={props.pieceActions.delete}/>
     </div>
   );

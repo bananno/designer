@@ -29,7 +29,7 @@ class Piece extends Component {
           editPieceText={this.props.editPieceText}
           pieceActions={this.pieceActions}
           showTools={this.props.showTools}
-          />
+          > {this.props.children} </Title>
       );
     }
 
@@ -39,7 +39,7 @@ class Piece extends Component {
           reorderPieceItems={this.props.reorderPieceItems}
           pieceActions={this.pieceActions}
           showTools={this.props.showTools}
-          />
+          > {this.props.children} </Navigation>
       );
     }
 
@@ -48,7 +48,7 @@ class Piece extends Component {
         <Banner data={this.props.data}
           pieceActions={this.pieceActions}
           showTools={this.props.showTools}
-          />
+          > {this.props.children} </Banner>
       );
     }
 
@@ -56,6 +56,7 @@ class Piece extends Component {
       <div>
         PIECE (type = {pieceType})
         <DeleteButton showDelete={this.props.showTools.delete} delete={this.pieceActions.delete}/>
+        {this.props.children}
       </div>
     );
   }
