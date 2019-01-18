@@ -4,7 +4,9 @@ import PieceOption from './PieceOption.js';
 class Control extends Component {
   getToggleTool = (toolName) => {
     return () => {
-      this.props.toggleTool(toolName);
+      let newState = this.props.state;
+      newState.showTools[toolName] = !newState.showTools[toolName];
+      this.props.setState(newState);
     }
   }
 

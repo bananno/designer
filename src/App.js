@@ -45,9 +45,7 @@ class App extends Component {
     },
   }
 
-  toggleTool = (toolName) => {
-    let newState = this.state;
-    newState.showTools[toolName] = !newState.showTools[toolName];
+  setStateWrap = (newState) => {
     this.setState(newState);
   }
 
@@ -194,13 +192,14 @@ class App extends Component {
     return (
       <div className="App">
         <Control style={this.state.canvas}
+          state={this.state}
+          setState={this.setStateWrap}
           changeBackgroundColor={this.changeBackgroundColor}
           saveBackgroundColorField={this.saveBackgroundColorField}
           resetBackgroundColorField={this.resetBackgroundColorField}
           addNewPiece={this.addNewPiece}
           deletePiece={this.deletePiece}
           currentPieces={this.state.pieces}
-          toggleTool={this.toggleTool}
           pieceTypes={pieceTypes}
           />
         <Canvas
