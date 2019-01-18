@@ -170,18 +170,6 @@ class App extends Component {
     });
   }
 
-  addNewPiece = () => {
-    var newState = this.state;
-    var pieceType = document.getElementById('addNewPieceType').value;
-    let newPiece = createPiece({
-      type: pieceType,
-      id: this.state.pieceIdCount
-    });
-    newState.pieces.push(newPiece);
-    newState.pieceIdCount += 1;
-    this.setState(newState);
-  }
-
   render() {
     return (
       <div className="App">
@@ -191,7 +179,6 @@ class App extends Component {
           changeBackgroundColor={this.changeBackgroundColor}
           saveBackgroundColorField={this.saveBackgroundColorField}
           resetBackgroundColorField={this.resetBackgroundColorField}
-          addNewPiece={this.addNewPiece}
           currentPieces={this.state.pieces}
           pieceTypes={pieceTypes}
           />
