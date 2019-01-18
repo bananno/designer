@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Canvas from './Canvas/Canvas.js';
 import Control from './Control/Control.js';
+import createPiece from './helpers/createPiece.js';
 import './App.css';
 import './pieces/pieces.css';
 
@@ -15,28 +16,24 @@ const pieceTypes = [
 class App extends Component {
   state = {
     pieces: [
-      {
+      createPiece({
         type: 'title',
-        text: 'TITLE',
-        textInput: 'TITLE',
-        editing: false,
         id: 0
-      },
-      {
+      }),
+      createPiece({
         type: 'navigation',
         items: ['Home', 'Products', 'Services', 'Blog', 'Contact'],
-        dragging: null,
         id: 1
-      },
-      {
+      }),
+      createPiece({
         type: 'banner',
         image: 'bannerbg1',
         id: 2
-      },
-      {
+      }),
+      createPiece({
         type: 'content',
         id: 3
-      }
+      }),
     ],
     pieceIdCount: 4,
     canvas: {
