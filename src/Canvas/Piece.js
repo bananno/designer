@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import Title from '../pieces/title.js';
 import Navigation from '../pieces/navigation.js';
 import Banner from '../pieces/banner.js';
-import DeleteButton from '../pieces/deleteButton.js';
 
 class Piece extends Component {
   deletePiece = () => {
@@ -55,7 +54,6 @@ class Piece extends Component {
     return (
       <div>
         PIECE (type = {pieceType})
-        <DeleteButton showDelete={this.props.showTools.delete} delete={this.pieceActions.delete}/>
         {this.props.children}
       </div>
     );
