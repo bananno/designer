@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
+import Title from './title.js';
 
 class Piece extends Component {
   render() {
     var pieceType = this.props.data.type;
 
-    if (pieceType == 'title') {
-      return (
-        <h1 class="piece title">TITLE</h1>
-      );
+    if (pieceType === 'title') {
+      return (<Title data={this.props.data}/>);
     }
 
     if (pieceType == 'navigation') {

@@ -1,13 +1,23 @@
 
+/* TITLE */
+
 .piece.title {
   width: 100%;
   background-color: green;
 }
 
+.piece.title .display {
+  font-size: 40px;
+}
+
+/* BANNER */
+
 .piece.banner {
   height: 200px;
   background-color: orange;
 }
+
+/* NAVIGATION */
 
 .piece.navigation ul {
   list-style: none;

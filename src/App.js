@@ -15,6 +15,8 @@ class App extends Component {
     pieces: [
       {
         type: 'title',
+        text: 'TITLE',
+        view: 'display',
         id: 0
       },
       {
