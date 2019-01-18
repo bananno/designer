@@ -45,6 +45,9 @@ class App extends Component {
     newState.pieces = newState.pieces.map((thisPiece) => {
       if (thisPiece.id == pieceId) {
         thisPiece.editing = !(thisPiece.editing == true);
+        if (!thisPiece.editing) {
+          thisPiece.textInput = thisPiece.text;
+        }
       }
       return thisPiece;
     });
