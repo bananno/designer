@@ -138,43 +138,12 @@ class App extends Component {
     dragEnter: this.dragPieceItemEnter,
   }
 
-  changeBackgroundColor = (e) => {
-    var newCanvasStyle = this.state.canvas;
-    newCanvasStyle['body-background-color-input'] = e.target.value;
-    this.setState({
-      canvas: newCanvasStyle
-    });
-  }
-
-  saveBackgroundColorField = () => {
-    var newCanvasStyle = this.state.canvas;
-    newCanvasStyle['body-background-color'] = newCanvasStyle['body-background-color-input'];
-    this.setState({
-      canvas: newCanvasStyle
-    });
-  }
-
-  resetBackgroundColorField = () => {
-    var newCanvasStyle = this.state.canvas;
-    newCanvasStyle['body-background-color-input'] = newCanvasStyle['body-background-color'];
-    this.setState({
-      canvas: newCanvasStyle
-    });
-  }
-
-  editBodyBgColor = {
-    change: this.changeBackgroundColor,
-    save: this.saveBackgroundColorField,
-    reset: this.resetBackgroundColorField
-  }
-
   render() {
     return (
       <div className="App">
         <Control style={this.state.canvas}
           state={this.state}
           setState={this.setStateWrap}
-          editBodyBgColor={this.editBodyBgColor}
           />
         <Canvas
           state={this.state}

@@ -23,6 +23,24 @@ class Control extends Component {
     this.props.setState(newState);
   }
 
+  bodyBackgroundColorChange = (e) => {
+    let newState = this.props.state;
+    newState.canvas['body-background-color-input'] = e.target.value;
+    this.props.setState(newState);
+  }
+
+  bodyBackgroundColorSave = () => {
+    let newState = this.props.state;
+    newState.canvas['body-background-color'] = newState.canvas['body-background-color-input'];
+    this.props.setState(newState);
+  }
+
+  bodyBackgroundColorReset = () => {
+    let newState = this.props.state;
+    newState.canvas['body-background-color-input'] = newState.canvas['body-background-color'];
+    this.props.setState(newState);
+  }
+
   render() {
     var bodyBackgroundColor = this.props.style['body-background-color-input'];
     return (
@@ -41,9 +59,9 @@ class Control extends Component {
 
         <div>
           Body background color:
-          <input value={bodyBackgroundColor} onChange={this.props.editBodyBgColor.change}/>
-          <button onClick={this.props.editBodyBgColor.save}>save</button>
-          <button onClick={this.props.editBodyBgColor.reset}>cancel</button>
+          <input value={bodyBackgroundColor} onChange={this.bodyBackgroundColorChange}/>
+          <button onClick={this.bodyBackgroundColorSave}>save</button>
+          <button onClick={this.bodyBackgroundColorReset}>cancel</button>
         </div>
 
         <div>
