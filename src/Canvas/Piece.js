@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Title from '../Piece/title.js';
-import Navigation from '../Piece/navigation.js';
+import Title from '../pieces/title.js';
+import Navigation from '../pieces/navigation.js';
 
 class Piece extends Component {
   render() {
