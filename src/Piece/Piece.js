@@ -6,12 +6,18 @@ class Piece extends Component {
 
     if (pieceType == 'title') {
       return (
-        <h1>TITLE</h1>
+        <h1 class="piece title">TITLE</h1>
       );
     }
     if (pieceType == 'navigation') {
       return (
-        <div>click - click - click</div>
+        <div>
+          <ul>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+          </ul>
+        </div>
       );
     }
     if (pieceType == 'content') {
