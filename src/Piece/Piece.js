@@ -12,11 +12,19 @@ class Piece extends Component {
 
     if (pieceType == 'navigation') {
       return (
-        <ul class="piece navigation">
-          <li>item</li>
-          <li>item</li>
-          <li>item</li>
-        </ul>
+        <div class="piece navigation">
+          <ul>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+          </ul>
+        </div>
+      );
+    }
+
+    if (pieceType == 'banner') {
+      return (
+        <div class="piece banner"> </div>
       );
     }
 

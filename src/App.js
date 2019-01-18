@@ -18,11 +18,15 @@ class App extends Component {
       },
       {
         type: 'navigation',
+        id: 1
+      },
+      {
+        type: 'banner',
         id: 2
       },
       {
         type: 'content',
-        id: 1
+        id: 3
       }
     ],
     pieceIdCount: 2,
