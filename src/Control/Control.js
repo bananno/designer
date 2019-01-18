@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import createPiece from '../helpers/createPiece.js';
 
 class Control extends Component {
   getToggleTool = (toolName) => {
@@ -7,6 +8,18 @@ class Control extends Component {
       newState.showTools[toolName] = !newState.showTools[toolName];
       this.props.setState(newState);
     }
+  }
+
+  addNewPiece = () => {
+    var newState = this.props.state;
+    var pieceType = document.getElementById('addNewPieceType').value;
+    let newPiece = createPiece({
+      type: pieceType,
+      id: newState.pieceIdCount
+    });
+    newState.pieces.push(newPiece);
+    newState.pieceIdCount += 1;
+    this.props.setState(newState);
   }
 
   render() {
@@ -39,7 +52,7 @@ class Control extends Component {
               return <option value={pieceType} key={i}>{pieceType}</option>;
             })}
           </select>
-          <button onClick={this.props.addNewPiece}>add</button>
+          <button onClick={this.addNewPiece}>add</button>
         </div>
       </div>
     );
