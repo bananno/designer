@@ -22,8 +22,14 @@
 /* BANNER */
 
 .piece.banner {
-  height: 200px;
-  background-color: orange;
+  width: 400px;
+  background-color: white;
+  padding: 20px;
+  display: inline-block;
+}
+
+.piece.banner.bannerbg1 {
+  background-image: url("/designs/banner-bg.png");
 }
 
 /* NAVIGATION */
