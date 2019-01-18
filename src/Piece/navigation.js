@@ -2,6 +2,7 @@ import React from 'react';
 
 const navigation = (props) => {
   const pieceId = props.data.id;
+  const showDragAndDrop = props.showTools.reorder;
   const currentlyDragging = props.data.dragging !== null;
 
   const getDragStart = (index) => {
@@ -19,12 +20,17 @@ const navigation = (props) => {
     };
   };
 
-  let itemSpread = [null];
+  let itemSpread = [];
 
-  props.data.items.forEach((item) => {
-    itemSpread.push(item);
+  if (showDragAndDrop) {
     itemSpread.push(null);
-  });
+    props.data.items.forEach((item) => {
+      itemSpread.push(item);
+      itemSpread.push(null);
+    });
+  } else {
+    itemSpread = props.data.items;
+  }
 
   let count = -1;
 
@@ -32,6 +38,9 @@ const navigation = (props) => {
     <div className="piece navigation">
       <ul>
         {itemSpread.map((text, i) => {
+          if (!showDragAndDrop) {
+            return (<li key={i} className="item">{text}</li>);
+          }
           if (text == null) {
             count += 1;
             return (<li key={i} onDragEnter={getDragEnter(count)} className="drag-space">*</li>);
