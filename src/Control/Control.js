@@ -41,9 +41,9 @@ class Control extends Component {
 
         <div>
           Body background color:
-          <input value={bodyBackgroundColor} onChange={this.props.changeBackgroundColor}/>
-          <button onClick={this.props.saveBackgroundColorField}>save</button>
-          <button onClick={this.props.resetBackgroundColorField}>cancel</button>
+          <input value={bodyBackgroundColor} onChange={this.props.editBodyBgColor.change}/>
+          <button onClick={this.props.editBodyBgColor.save}>save</button>
+          <button onClick={this.props.editBodyBgColor.reset}>cancel</button>
         </div>
 
         <div>

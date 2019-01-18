@@ -162,16 +162,19 @@ class App extends Component {
     });
   }
 
+  editBodyBgColor = {
+    change: this.changeBackgroundColor,
+    save: this.saveBackgroundColorField,
+    reset: this.resetBackgroundColorField
+  }
+
   render() {
     return (
       <div className="App">
         <Control style={this.state.canvas}
           state={this.state}
           setState={this.setStateWrap}
-          changeBackgroundColor={this.changeBackgroundColor}
-          saveBackgroundColorField={this.saveBackgroundColorField}
-          resetBackgroundColorField={this.resetBackgroundColorField}
-          currentPieces={this.state.pieces}
+          editBodyBgColor={this.editBodyBgColor}
           />
         <Canvas
           state={this.state}
