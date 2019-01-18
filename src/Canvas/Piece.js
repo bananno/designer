@@ -20,7 +20,8 @@ class Piece extends Component {
   }
 
   render() {
-    var pieceType = this.props.data.type;
+    const pieceType = this.props.data.type;
+    const showDelete = this.props.showTools.delete;
 
     if (pieceType === 'title') {
       return (
@@ -54,6 +55,7 @@ class Piece extends Component {
     return (
       <div>
         PIECE (type = {pieceType})
+        {showDelete ? <button onClick={this.pieceActions.delete}>delete</button> : null}
       </div>
     );
   }

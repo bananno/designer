@@ -1,6 +1,8 @@
 import React from 'react';
 
 const title = (props) => {
+  const showDelete = props.showTools.delete;
+
   const editTextStart = () => {
     props.editPieceText.toggleView(props.data.id, true);
   };
@@ -36,6 +38,7 @@ const title = (props) => {
         {props.data.text}
       </div>
       <span onClick={editTextStart} className="edit-link">edit</span>
+      {showDelete ? <button onClick={props.pieceActions.delete}>delete</button> : null}
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 
 const navigation = (props) => {
   const pieceId = props.data.id;
+  const showDelete = props.showTools.delete;
   const showDragAndDrop = props.showTools.reorder;
   const currentlyDragging = props.data.dragging !== null;
 
@@ -48,6 +49,7 @@ const navigation = (props) => {
           return (<li key={i} draggable="true" onDragStart={getDragStart(count)} className="item">{text}</li>);
         })}
       </ul>
+      {showDelete ? <button onClick={props.pieceActions.delete}>delete</button> : null}
     </div>
   );
 };
