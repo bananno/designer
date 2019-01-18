@@ -5,11 +5,11 @@ import Navigation from '../pieces/navigation.js';
 import Banner from '../pieces/banner.js';
 
 class Piece extends Component {
-  deletePiece = (pieceId) => {
+  deletePiece = () => {
     var newState = this.props.state;
 
     newState.pieces = newState.pieces.filter((thisPiece) => {
-      return thisPiece.id !== pieceId;
+      return thisPiece.id !== this.props.data.id;
     });
 
     this.props.setState(newState);
