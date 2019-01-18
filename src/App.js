@@ -142,15 +142,9 @@ class App extends Component {
     return (
       <div className="App">
         <Control state={this.state} setState={this.setStateWrap}/>
-        <Canvas
-          state={this.state}
-          setState={this.setStateWrap}
-          style={this.state.canvas}
-          pieces={this.state.pieces}
-          showTools={this.state.showTools}
+        <Canvas state={this.state} setState={this.setStateWrap}
           editPieceText={this.editPieceText}
-          reorderPieceItems={this.reorderPieceItems}
-          />
+          reorderPieceItems={this.reorderPieceItems}/>
       </div>
     );
   }
