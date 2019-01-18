@@ -86,11 +86,51 @@ class App extends Component {
   }
 
   dragPieceItemStart = (pieceId, dragIndex) => {
-    console.log('dragging ' + dragIndex);
+    let newState = this.state;
+    newState.pieces = newState.pieces.map((thisPiece) => {
+      if (thisPiece.id === pieceId) {
+        thisPiece.dragging = dragIndex;
+      }
+      return thisPiece;
+    });
+    this.setState(newState);
   }
 
   dragPieceItemEnter = (pieceId, placeBefore) => {
-    console.log('place before ' + placeBefore);
+    let newState = this.state;
+    newState.pieces = newState.pieces.map((thisPiece) => {
+      if (thisPiece.id === pieceId) {
+
+        let dragIndex = thisPiece.dragging;
+
+        if (placeBefore == dragIndex || placeBefore == dragIndex + 1) {
+          return thisPiece;
+        }
+
+        let newArray = [];
+
+        for (let i = 0; i <= thisPiece.items.length; i++) {
+
+          if (i == placeBefore) {
+            newArray.push(thisPiece.items[dragIndex]);
+          }
+
+          if (i == dragIndex) {
+            continue;
+          }
+
+          if (i < thisPiece.items.length) {
+            newArray.push(thisPiece.items[i]);
+          }
+        }
+
+        thisPiece.items = newArray;
+        thisPiece.dragging = null;
+
+      }
+      return thisPiece;
+    });
+    this.setState(newState);
   }
 
   reorderPieceItems = {

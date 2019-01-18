@@ -34,8 +34,19 @@
 
 .piece.navigation li {
   display: inline-block;
-  background-color: gray;
   margin: 5px;
+}
+
+.piece.navigation li.item {
+  display: inline-block;
+  background-color: gray;
+  border-radius: 5px;
   padding: 2px 5px;
-  border-radius: 5px
+}
+
+.piece.navigation li.drag-space {
+  display: inline-block;
+  border: 2px dotted orange;
+  padding: 0px 5px;
+  color: transparent;
 }
