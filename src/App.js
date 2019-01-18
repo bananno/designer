@@ -28,6 +28,7 @@ class App extends Component {
       },
       {
         type: 'banner',
+        image: 'designs/banner-bg1.png',
         id: 2
       },
       {

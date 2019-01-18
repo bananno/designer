@@ -22,6 +22,7 @@ class Piece extends Component {
     if (pieceType === 'banner') {
       return (
         <div className="piece banner"> </div>
+        // <img src="/designs/banner-bg.png"/>
       );
     }
 
