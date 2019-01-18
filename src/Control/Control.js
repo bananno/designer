@@ -2,11 +2,23 @@ import React, { Component } from 'react';
 import PieceOption from './PieceOption.js';
 
 class Control extends Component {
+  getToggleTool = (toolName) => {
+    return () => {
+      this.props.toggleTool(toolName);
+    }
+  }
+
   render() {
     var bodyBackgroundColor = this.props.style['body-background-color-input'];
     return (
       <div className="block">
         <h1>Controls</h1>
+
+        <div>
+          <input type="checkbox" id="toggleToolReorder" onChange={this.getToggleTool('reorder')}/>
+          <label htmlFor="toggleToolReorder">drag and drop to reorder</label>
+        </div>
+
         <div>
           Body background color:
           <input value={bodyBackgroundColor} onChange={this.props.changeBackgroundColor}/>

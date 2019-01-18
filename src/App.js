@@ -39,7 +39,16 @@ class App extends Component {
     canvas: {
       "body-background-color": "blue",
       "body-background-color-input": "blue"
-    }
+    },
+    showTools: {
+      reorder: false,
+    },
+  }
+
+  toggleTool = (toolName) => {
+    let newState = this.state;
+    newState.showTools[toolName] = !newState.showTools[toolName];
+    this.setState(newState);
   }
 
   editPieceTextToggleView = (pieceId, toggle) => {
@@ -191,11 +200,13 @@ class App extends Component {
           addNewPiece={this.addNewPiece}
           deletePiece={this.deletePiece}
           currentPieces={this.state.pieces}
+          toggleTool={this.toggleTool}
           pieceTypes={pieceTypes}
           />
         <Canvas
           style={this.state.canvas}
           pieces={this.state.pieces}
+          showTools={this.state.showTools}
           editPieceText={this.editPieceText}
           reorderPieceItems={this.reorderPieceItems}
           />
