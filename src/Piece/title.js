@@ -2,16 +2,16 @@ import React from 'react';
 
 const title = (props) => {
   const togglePieceEditing = () => {
-    props.togglePieceEditing(props.data.id);
+    props.editPieceText.toggleView(props.data.id);
   };
 
   const editPieceText = (e) => {
     let newText = e.target.value;
-    props.editPieceText(props.data.id, newText);
+    props.editPieceText.changeInput(props.data.id, newText);
   }
 
   const savePieceText = () => {
-    props.savePieceText(props.data.id);
+    props.editPieceText.clickSave(props.data.id);
   }
 
   if (props.data.editing) {

@@ -7,11 +7,7 @@ class Piece extends Component {
 
     if (pieceType === 'title') {
       return (
-        <Title data={this.props.data}
-          togglePieceEditing={this.props.togglePieceEditing}
-          editPieceText={this.props.editPieceText}
-          savePieceText={this.props.savePieceText}
-        />
+        <Title data={this.props.data} editPieceText={this.props.editPieceText}/>
       );
     }
 

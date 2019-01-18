@@ -40,7 +40,7 @@ class App extends Component {
     }
   }
 
-  togglePieceEditing = (pieceId) => {
+  editPieceTextToggleView = (pieceId) => {
     let newState = this.state;
     newState.pieces = newState.pieces.map((thisPiece) => {
       if (thisPiece.id == pieceId) {
@@ -54,7 +54,7 @@ class App extends Component {
     this.setState(newState);
   }
 
-  editPieceText = (pieceId, newText) => {
+  editPieceTextInput = (pieceId, newText) => {
     let newState = this.state;
     newState.pieces = newState.pieces.map((thisPiece) => {
       if (thisPiece.id == pieceId) {
@@ -65,7 +65,7 @@ class App extends Component {
     this.setState(newState);
   }
 
-  savePieceText = (pieceId) => {
+  editPieceTextSave = (pieceId) => {
     let newState = this.state;
     newState.pieces = newState.pieces.map((thisPiece) => {
       if (thisPiece.id == pieceId) {
@@ -75,6 +75,12 @@ class App extends Component {
       return thisPiece;
     });
     this.setState(newState);
+  }
+
+  editPieceText = {
+    toggleView: this.editPieceTextToggleView,
+    changeInput: this.editPieceTextInput,
+    clickSave: this.editPieceTextSave,
   }
 
   changeBackgroundColor = (e) => {
@@ -135,9 +141,7 @@ class App extends Component {
         <Canvas
           style={this.state.canvas}
           pieces={this.state.pieces}
-          togglePieceEditing={this.togglePieceEditing}
           editPieceText={this.editPieceText}
-          savePieceText={this.savePieceText}
           />
       </div>
     );
