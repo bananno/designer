@@ -22,6 +22,11 @@ class Control extends Component {
         </div>
 
         <div>
+          <input type="checkbox" id="toggleToolDelete" onChange={this.getToggleTool('delete')}/>
+          <label htmlFor="toggleToolDelete">buttons to delete</label>
+        </div>
+
+        <div>
           Body background color:
           <input value={bodyBackgroundColor} onChange={this.props.changeBackgroundColor}/>
           <button onClick={this.props.saveBackgroundColorField}>save</button>

@@ -43,6 +43,7 @@ class App extends Component {
     },
     showTools: {
       reorder: false,
+      delete: false,
     },
   }
 

@@ -1,6 +1,8 @@
 import React from 'react';
 
 const banner = (props) => {
+  const showDelete = props.showTools.delete;
+
   let className = 'piece banner';
 
   if (props.data.image) {
@@ -9,8 +11,7 @@ const banner = (props) => {
 
   return (
     <div className={className}>
-      banner
-      <button onClick={props.pieceActions.delete}>delete</button>
+      {showDelete ? <button onClick={props.pieceActions.delete}>delete</button> : null}
     </div>
   );
 };

@@ -37,7 +37,8 @@ class Piece extends Component {
 
     if (pieceType === 'banner') {
       return (
-        <Banner data={this.props.data} pieceActions={this.pieceActions}/>
+        <Banner data={this.props.data} pieceActions={this.pieceActions}
+          showTools={this.props.showTools}/>
       );
     }
 
