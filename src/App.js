@@ -43,7 +43,7 @@ class App extends Component {
   editPieceTextToggleView = (pieceId, toggle) => {
     let newState = this.state;
     newState.pieces = newState.pieces.map((thisPiece) => {
-      if (thisPiece.id == pieceId) {
+      if (thisPiece.id === pieceId) {
         thisPiece.editing = toggle;
         if (!toggle) {
           thisPiece.textInput = thisPiece.text;
@@ -57,7 +57,7 @@ class App extends Component {
   editPieceTextInput = (pieceId, newText) => {
     let newState = this.state;
     newState.pieces = newState.pieces.map((thisPiece) => {
-      if (thisPiece.id == pieceId) {
+      if (thisPiece.id === pieceId) {
         thisPiece.textInput = newText;
       }
       return thisPiece;
@@ -68,7 +68,7 @@ class App extends Component {
   editPieceTextSave = (pieceId) => {
     let newState = this.state;
     newState.pieces = newState.pieces.map((thisPiece) => {
-      if (thisPiece.id == pieceId) {
+      if (thisPiece.id === pieceId) {
         thisPiece.text = thisPiece.textInput;
         thisPiece.editing = false;
       }
@@ -121,7 +121,7 @@ class App extends Component {
   deletePiece = (deleteId) => {
     var newState = this.state;
     newState.pieces = newState.pieces.filter((thisPiece) => {
-      return thisPiece.id != deleteId;
+      return thisPiece.id !== deleteId;
     });
     this.setState(newState);
   }
