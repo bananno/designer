@@ -4,9 +4,9 @@ const navigation = (props) => {
   return (
     <div className="piece navigation">
       <ul>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
+        {props.data.items.map((text, i) => {
+          return (<li key={i}>{text}</li>);
+        })}
       </ul>
     </div>
   );

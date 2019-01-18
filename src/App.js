@@ -22,6 +22,7 @@ class App extends Component {
       },
       {
         type: 'navigation',
+        items: ['Home', 'Products', 'Services', 'Blog', 'Contact'],
         id: 1
       },
       {
