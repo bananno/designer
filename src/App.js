@@ -38,7 +38,7 @@ class App extends Component {
         id: 3
       }
     ],
-    pieceIdCount: 2,
+    pieceIdCount: 4,
     canvas: {
       "body-background-color": "blue",
       "body-background-color-input": "blue"
