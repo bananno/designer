@@ -16,6 +16,7 @@ class App extends Component {
       {
         type: 'title',
         text: 'TITLE',
+        textInput: 'TITLE',
         editing: false,
         id: 0
       },
@@ -44,6 +45,17 @@ class App extends Component {
     newState.pieces = newState.pieces.map((thisPiece) => {
       if (thisPiece.id == pieceId) {
         thisPiece.editing = !(thisPiece.editing == true);
+      }
+      return thisPiece;
+    });
+    this.setState(newState);
+  }
+
+  editPieceText = (pieceId, newText) => {
+    let newState = this.state;
+    newState.pieces = newState.pieces.map((thisPiece) => {
+      if (thisPiece.id == pieceId) {
+        thisPiece.textInput = newText;
       }
       return thisPiece;
     });
@@ -109,6 +121,7 @@ class App extends Component {
           style={this.state.canvas}
           pieces={this.state.pieces}
           togglePieceEditing={this.togglePieceEditing}
+          editPieceText={this.editPieceText}
           />
       </div>
     );
