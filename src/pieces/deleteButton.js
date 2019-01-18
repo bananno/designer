@@ -1,10 +1,6 @@
 import React from 'react';
 
 const deleteButton = (props) => {
-  if (props.state == null) {
-    return null;
-  }
-
   if (!props.state.showTools.delete) {
     return null;
   }
