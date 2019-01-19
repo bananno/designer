@@ -6,36 +6,40 @@ import './App.css';
 import './pieces/pieces.css';
 
 class App extends Component {
-  state = {
-    pieces: [
-      createPiece({
-        type: 'title',
-        id: 0
-      }),
-      createPiece({
-        type: 'navigation',
-        items: ['Home', 'Products', 'Services', 'Blog', 'Contact'],
-        id: 1
-      }),
-      createPiece({
-        type: 'banner',
-        image: 'bannerbg1',
-        id: 2
-      }),
-      createPiece({
-        type: 'content',
-        id: 3
-      }),
-    ],
-    pieceIdCount: 4,
-    canvas: {
-      "body-background-color": "blue",
-      "body-background-color-input": "blue"
-    },
-    showTools: {
-      reorder: false,
-      delete: false,
-    },
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      pieces: [
+        createPiece({
+          type: 'title',
+          id: 0
+        }),
+        createPiece({
+          type: 'navigation',
+          items: ['Home', 'Products', 'Services', 'Blog', 'Contact'],
+          id: 1
+        }),
+        createPiece({
+          type: 'banner',
+          image: 'bannerbg1',
+          id: 2
+        }),
+        createPiece({
+          type: 'content',
+          id: 3
+        }),
+      ],
+      pieceIdCount: 4,
+      canvas: {
+        "body-background-color": "blue",
+        "body-background-color-input": "blue"
+      },
+      showTools: {
+        reorder: false,
+        delete: false,
+      },
+    };
   }
 
   setStateWrap = (newState) => {
