@@ -4,19 +4,18 @@ import pieceTypes from '../helpers/pieceTypes.js';
 import toolList from '../helpers/toolList.js';
 
 class Control extends Component {
-  getToggleTool = (toolName) => {
-    return () => {
-      let newState = this.props.state;
-      newState.showTools[toolName] = !newState.showTools[toolName];
-      this.props.setState(newState);
-    }
-  }
-
   mapToolList = (toolInfo, i) => {
+    const toggle = () => {
+      let newState = this.props.state;
+      newState.showTools[toolInfo.name] = !newState.showTools[toolInfo.name];
+      this.props.setState(newState);
+    };
+
     let toolId = 'toggleTool-' + toolInfo.name;
+
     return (
       <div key={i}>
-        <input type="checkbox" id={toolId} onChange={this.getToggleTool(toolInfo.name)}/>
+        <input type="checkbox" id={toolId} onChange={toggle}/>
         <label htmlFor={toolId}>{toolInfo.description}</label>
       </div>
     );
