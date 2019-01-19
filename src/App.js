@@ -23,7 +23,6 @@ class App extends Component {
         }),
         createPiece({
           type: 'banner',
-          image: 'bannerbg1',
           id: 2
         }),
         createPiece({

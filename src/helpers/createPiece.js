@@ -1,4 +1,6 @@
 
+import bannerBgImages from '../constants/bannerBgImages.js';
+
 function createPiece(newPiece) {
   newPiece = newPiece || {};
 
@@ -12,7 +14,10 @@ function createPiece(newPiece) {
     newPiece.items = newPiece.items || ['Link Here'];
     newPiece.dragging = null;
   } else if (newPiece.type === 'banner') {
-    newPiece.image = newPiece.image || null;
+    newPiece.image = newPiece.image || bannerBgImages[0];
+    if (newPiece.image.match('.')) {
+      newPiece.image = newPiece.image.slice(0, newPiece.image.indexOf('.'));
+    }
   }
 
   return newPiece;
