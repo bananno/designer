@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import createPiece from '../helpers/createPiece.js';
 import pieceTypes from '../helpers/pieceTypes.js';
+import toolList from '../helpers/toolList.js';
 
 class Control extends Component {
   getToggleTool = (toolName) => {
@@ -47,15 +48,15 @@ class Control extends Component {
       <div id="control">
         <h1>Controls</h1>
 
-        <div>
-          <input type="checkbox" id="toggleToolReorder" onChange={this.getToggleTool('reorder')}/>
-          <label htmlFor="toggleToolReorder">drag and drop to reorder</label>
-        </div>
-
-        <div>
-          <input type="checkbox" id="toggleToolDelete" onChange={this.getToggleTool('delete')}/>
-          <label htmlFor="toggleToolDelete">buttons to delete</label>
-        </div>
+        {toolList.map((toolInfo, i) => {
+          let toolId = 'toggleTool-' + toolInfo.name;
+          return (
+            <div key={i}>
+              <input type="checkbox" id={toolId} onChange={this.getToggleTool(toolInfo.name)}/>
+              <label htmlFor={toolId}>{toolInfo.description}</label>
+            </div>
+          );
+        })}
 
         <div>
           Body background color:
