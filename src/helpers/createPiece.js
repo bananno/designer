@@ -15,6 +15,8 @@ function createPiece(newPiece) {
     newPiece.dragging = null;
   } else if (newPiece.type === 'banner') {
     newPiece.image = newPiece.image || bannerBgImages[0];
+    newPiece.width = 800;
+    newPiece.height = 200;
   }
 
   return newPiece;

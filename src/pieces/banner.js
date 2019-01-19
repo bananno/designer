@@ -22,9 +22,14 @@ const banner = (props) => {
     props.setState(newState);
   }
 
+  let pieceStyle = {};
+
+  pieceStyle['width'] = props.piece.width + 'px';
+  pieceStyle['height'] = props.piece.height + 'px';
+
   return (
     <div className={className}>
-      <div>
+      <div style={pieceStyle}>
         background image:
         <ImageSelector current={currentImage} change={changeBackground}/>
       </div>
