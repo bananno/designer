@@ -17,6 +17,8 @@ function createPiece(newPiece) {
     newPiece.image = newPiece.image || bannerBgImages[0];
     newPiece.width = 800;
     newPiece.height = 200;
+    newPiece.widthInput = newPiece.width;
+    newPiece.heightInput = newPiece.height;
   }
 
   return newPiece;

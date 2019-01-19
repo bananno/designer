@@ -23,6 +23,19 @@ const banner = (props) => {
     props.setState(newState);
   }
 
+  const changePiece = (attribute, newValue) => {
+    let newState = props.state;
+
+    newState.pieces = newState.pieces.map(thisPiece => {
+      if (thisPiece === props.piece) {
+        thisPiece[attribute] = newValue;
+      }
+      return thisPiece;
+    });
+
+    props.setState(newState);
+  }
+
   let pieceStyle = {};
 
   pieceStyle['width'] = props.piece.width + 'px';
@@ -35,7 +48,7 @@ const banner = (props) => {
         <ImageSelector current={currentImage} change={changeBackground}/>
         <br/>
         size:
-        <EditSize width={props.piece.width} height={props.piece.height}/>
+        <EditSize piece={props.piece} changePiece={changePiece}/>
       </div>
       {props.children}
     </div>
