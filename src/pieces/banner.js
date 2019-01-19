@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageSelector from '../bits/imageSelector.js';
+import EditSize from '../bits/editSize.js';
 
 const banner = (props) => {
   let className = 'piece banner';
@@ -32,6 +33,9 @@ const banner = (props) => {
       <div style={pieceStyle}>
         background image:
         <ImageSelector current={currentImage} change={changeBackground}/>
+        <br/>
+        size:
+        <EditSize width={props.piece.width} height={props.piece.height}/>
       </div>
       {props.children}
     </div>

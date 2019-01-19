@@ -8,3 +8,8 @@
 #canvas {
   width: 100%;
 }
+
+input.edit-size {
+  width: 40px;
+  text-align: right;
+}
