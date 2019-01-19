@@ -2,11 +2,15 @@ import React from 'react';
 import bannerBgImages from '../constants/bannerBgImages.js';
 
 const imageSelector = (props) => {
+  const onChange = (e) => {
+    props.change(e.target.value);
+  };
+
   return (
-    <select>
+    <select onChange={onChange} value={props.current}>
       {bannerBgImages.map((image, i) => {
         return (
-          <option key={i}>
+          <option value={image} key={i}>
             {image}
           </option>
         );
