@@ -12,6 +12,16 @@ class Control extends Component {
     }
   }
 
+  mapToolList = (toolInfo, i) => {
+    let toolId = 'toggleTool-' + toolInfo.name;
+    return (
+      <div key={i}>
+        <input type="checkbox" id={toolId} onChange={this.getToggleTool(toolInfo.name)}/>
+        <label htmlFor={toolId}>{toolInfo.description}</label>
+      </div>
+    );
+  }
+
   addNewPiece = () => {
     var newState = this.props.state;
     var pieceType = document.getElementById('addNewPieceType').value;
@@ -48,15 +58,7 @@ class Control extends Component {
       <div id="control">
         <h1>Controls</h1>
 
-        {toolList.map((toolInfo, i) => {
-          let toolId = 'toggleTool-' + toolInfo.name;
-          return (
-            <div key={i}>
-              <input type="checkbox" id={toolId} onChange={this.getToggleTool(toolInfo.name)}/>
-              <label htmlFor={toolId}>{toolInfo.description}</label>
-            </div>
-          );
-        })}
+        {toolList.map(this.mapToolList)}
 
         <div>
           Body background color:
