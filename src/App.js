@@ -30,7 +30,6 @@ class App extends Component {
           id: 3
         }),
       ],
-      pieceIdCount: 4,
       canvas: {
         "body-background-color": "blue",
         "body-background-color-input": "blue"
@@ -40,6 +39,8 @@ class App extends Component {
         delete: false,
       },
     };
+
+    this.state.pieceIdCount = this.state.pieces.length;
   }
 
   setStateWrap = (newState) => {
