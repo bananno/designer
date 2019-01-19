@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Canvas from './Canvas/Canvas.js';
 import Control from './Control/Control.js';
 import createPiece from './helpers/createPiece.js';
-import toolList from './helpers/toolList.js';
+import toolList from './constants/tools.js';
 import './App.css';
 import './pieces/pieces.css';
 

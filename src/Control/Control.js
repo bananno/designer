@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import createPiece from '../helpers/createPiece.js';
-import pieceTypes from '../helpers/pieceTypes.js';
-import toolList from '../helpers/toolList.js';
+import pieceTypes from '../constants/pieceTypes.js';
+import toolList from '../constants/tools.js';
 
 class Control extends Component {
   mapToolList = (toolInfo, i) => {
