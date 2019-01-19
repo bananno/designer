@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
+    let initialState = {
       pieces: [
         createPiece({
           type: 'title',
@@ -38,11 +38,13 @@ class App extends Component {
       showTools: {},
     };
 
-    this.state.pieceIdCount = this.state.pieces.length;
+    initialState.pieceIdCount = initialState.pieces.length;
 
     toolList.forEach(toolInfo => {
-      this.state.showTools[toolInfo.name] = false;
+      initialState.showTools[toolInfo.name] = false;
     });
+
+    this.state = initialState;
   }
 
   setStateWrap = (newState) => {
