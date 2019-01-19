@@ -8,6 +8,10 @@ const toolList = [
     name: 'delete',
     description: 'buttons to delete'
   },
+  {
+    name: 'other',
+    description: 'other tools'
+  },
 ];
 
 export default toolList;
