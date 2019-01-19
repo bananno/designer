@@ -22,7 +22,9 @@
 /* BANNER */
 
 .piece.banner {
-  width: 400px;
+  width: 800px;
+  height: 200px;
+  background-size: 1000px;
   background-color: white;
   padding: 20px;
   display: inline-block;
