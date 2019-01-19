@@ -15,6 +15,11 @@
   background-color: green;
 }
 
+.piece.title input {
+  font-size: 40px;
+  background-color: transparent;
+}
+
 .piece.title .display {
   font-size: 40px;
 }
