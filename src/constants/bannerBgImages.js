@@ -1,7 +1,7 @@
 
 const bannerBgImages = [
-  'bannerbg1.png',
-  'bannerbg2.jpg',
+  'bannerbg1',
+  'bannerbg2',
 ];
 
 export default bannerBgImages;
