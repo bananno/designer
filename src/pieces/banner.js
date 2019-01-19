@@ -41,14 +41,26 @@ const banner = (props) => {
   pieceStyle['width'] = props.piece.width + 'px';
   pieceStyle['height'] = props.piece.height + 'px';
 
-  return (
-    <div className={className}>
-      <div style={pieceStyle}>
+  const pieceTools = () => {
+    if (!props.state.showTools.other) {
+      return null;
+    }
+
+    return (
+      <div>
         background image:
         <ImageSelector current={currentImage} change={changeBackground}/>
         <br/>
         size:
         <EditSize piece={props.piece} changePiece={changePiece}/>
+      </div>
+    );
+  };
+
+  return (
+    <div className={className}>
+      <div style={pieceStyle}>
+        {pieceTools()}
       </div>
       {props.children}
     </div>
