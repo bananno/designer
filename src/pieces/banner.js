@@ -10,7 +10,16 @@ const banner = (props) => {
   }
 
   const changeBackground = (newValue) => {
-    console.log('new background: ' + newValue);
+    let newState = props.state;
+
+    newState.pieces = newState.pieces.map(thisPiece => {
+      if (thisPiece === props.piece) {
+        thisPiece.image = newValue;
+      }
+      return thisPiece;
+    });
+
+    props.setState(newState);
   }
 
   return (
