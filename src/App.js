@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Canvas from './Canvas/Canvas.js';
 import Control from './Control/Control.js';
 import createPiece from './helpers/createPiece.js';
+import toolList from './helpers/toolList.js';
 import './App.css';
 import './pieces/pieces.css';
 
@@ -34,13 +35,14 @@ class App extends Component {
         "body-background-color": "blue",
         "body-background-color-input": "blue"
       },
-      showTools: {
-        reorder: false,
-        delete: false,
-      },
+      showTools: {},
     };
 
     this.state.pieceIdCount = this.state.pieces.length;
+
+    toolList.forEach(toolInfo => {
+      this.state.showTools[toolInfo.name] = false;
+    });
   }
 
   setStateWrap = (newState) => {
