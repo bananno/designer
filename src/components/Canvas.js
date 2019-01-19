@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Piece from './Piece.js';
-import DeleteButton from '../pieces/deleteButton.js';
+import DeleteButton from '../bits/deleteButton.js';
 
 class Canvas extends Component {
   mapPieces = (thisPiece, i) => {
