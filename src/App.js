@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Canvas from './Canvas/Canvas.js';
-import Control from './Control/Control.js';
+import Canvas from './components/Canvas.js';
+import Control from './components/Control.js';
 import createPiece from './helpers/createPiece.js';
 import toolList from './constants/tools.js';
 import './App.css';
