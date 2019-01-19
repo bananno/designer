@@ -33,9 +33,9 @@ class Piece extends Component {
 
     if (pieceType === 'banner') {
       return (
-        <Banner data={this.props.data}
-          pieceActions={this.pieceActions}
-          showTools={this.props.showTools}
+        <Banner piece={this.props.piece}
+          state={this.props.state}
+          setState={this.props.setState}
           > {this.props.children} </Banner>
       );
     }

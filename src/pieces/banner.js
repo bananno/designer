@@ -3,7 +3,7 @@ import ImageSelector from '../bits/imageSelector.js';
 
 const banner = (props) => {
   let className = 'piece banner';
-  let currentImage = props.data.image;
+  let currentImage = props.piece.image;
 
   if (currentImage) {
     className += ' ' + currentImage;

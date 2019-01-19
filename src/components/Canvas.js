@@ -8,6 +8,7 @@ class Canvas extends Component {
       <Piece data={thisPiece} key={i} editPieceText={this.props.editPieceText}
         state={this.props.state}
         setState={this.props.setState}
+        piece={thisPiece}
         showTools={this.props.state.showTools}
         reorderPieceItems={this.props.reorderPieceItems}>
           <DeleteButton piece={thisPiece} state={this.props.state}
