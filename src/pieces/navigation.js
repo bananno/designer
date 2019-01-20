@@ -2,7 +2,7 @@ import React from 'react';
 
 const navigation = (props) => {
   const pieceId = props.piece.id;
-  const showDragAndDrop = props.showTools.reorder;
+  const showDragAndDrop = props.state.showTools.reorder;
   const currentlyDragging = props.piece.dragging !== null;
 
   const getDragStart = (index) => {
