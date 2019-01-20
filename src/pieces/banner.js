@@ -46,8 +46,14 @@ const banner = (props) => {
       return null;
     }
 
+    if (!props.piece.showTools) {
+      return (
+        <div>TOOLS</div>
+      );
+    }
+
     return (
-      <div>
+      <div className="piece-tools">
         background image:
         <ImageSelector current={currentImage} change={changeBackground}/>
         <br/>

@@ -19,6 +19,7 @@ function createPiece(newPiece) {
     newPiece.height = 200;
     newPiece.widthInput = newPiece.width;
     newPiece.heightInput = newPiece.height;
+    newPiece.showTools = false;
   }
 
   return newPiece;
