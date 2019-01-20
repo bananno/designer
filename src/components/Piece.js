@@ -23,7 +23,9 @@ class Piece extends Component {
 
     if (pieceType === 'navigation') {
       return (
-        <Navigation data={this.props.data}
+        <Navigation piece={this.props.piece}
+          state={this.props.state}
+          setState={this.props.setState}
           reorderPieceItems={this.props.reorderPieceItems}
           pieceActions={this.pieceActions}
           showTools={this.props.showTools}

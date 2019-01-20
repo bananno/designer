@@ -1,9 +1,9 @@
 import React from 'react';
 
 const navigation = (props) => {
-  const pieceId = props.data.id;
+  const pieceId = props.piece.id;
   const showDragAndDrop = props.showTools.reorder;
-  const currentlyDragging = props.data.dragging !== null;
+  const currentlyDragging = props.piece.dragging !== null;
 
   const getDragStart = (index) => {
     return () => {
@@ -24,12 +24,12 @@ const navigation = (props) => {
 
   if (showDragAndDrop) {
     itemSpread.push(null);
-    props.data.items.forEach((item) => {
+    props.piece.items.forEach((item) => {
       itemSpread.push(item);
       itemSpread.push(null);
     });
   } else {
-    itemSpread = props.data.items;
+    itemSpread = props.piece.items;
   }
 
   let count = -1;
