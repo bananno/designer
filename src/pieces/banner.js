@@ -40,7 +40,9 @@ const banner = (props) => {
     let newState = props.state;
 
     newState.pieces = newState.pieces.map(thisPiece => {
-      thisPiece.showTools = !thisPiece.showTools;
+      if (thisPiece === props.piece) {
+        thisPiece.showTools = !thisPiece.showTools;
+      }
       return thisPiece;
     });
 
