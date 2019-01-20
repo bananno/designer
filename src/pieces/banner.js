@@ -21,7 +21,7 @@ const banner = (props) => {
     });
 
     props.setState(newState);
-  }
+  };
 
   const changePiece = (attribute, newValue) => {
     let newState = props.state;
@@ -34,16 +34,27 @@ const banner = (props) => {
     });
 
     props.setState(newState);
-  }
+  };
 
-  const pieceTools = () => {
+  const togglePieceTools = () => {
+    let newState = props.state;
+
+    newState.pieces = newState.pieces.map(thisPiece => {
+      thisPiece.showTools = !thisPiece.showTools;
+      return thisPiece;
+    });
+
+    props.setState(newState);
+  };
+
+  const getPieceTools = () => {
     if (!props.state.showTools.other) {
       return null;
     }
 
     if (!props.piece.showTools) {
       return (
-        <div>TOOLS</div>
+        <button onClick={togglePieceTools}>edit banner</button>
       );
     }
 
@@ -54,6 +65,8 @@ const banner = (props) => {
         <br/>
         size:
         <EditSize piece={props.piece} changePiece={changePiece}/>
+        <br/>
+        <button onClick={togglePieceTools}>done</button>
       </div>
     );
   };
@@ -66,7 +79,7 @@ const banner = (props) => {
   return (
     <div className={className}>
       <div style={pieceStyle}>
-        {pieceTools()}
+        {getPieceTools()}
       </div>
       {props.children}
     </div>
