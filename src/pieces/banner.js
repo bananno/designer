@@ -36,11 +36,6 @@ const banner = (props) => {
     props.setState(newState);
   }
 
-  let pieceStyle = {};
-
-  pieceStyle['width'] = props.piece.width + 'px';
-  pieceStyle['height'] = props.piece.height + 'px';
-
   const pieceTools = () => {
     if (!props.state.showTools.other) {
       return null;
@@ -62,6 +57,11 @@ const banner = (props) => {
       </div>
     );
   };
+
+  let pieceStyle = {};
+
+  pieceStyle['width'] = props.piece.width + 'px';
+  pieceStyle['height'] = props.piece.height + 'px';
 
   return (
     <div className={className}>
