@@ -14,7 +14,7 @@
   padding: 10px;
 }
 
-.piece button.edit-piece {
+.piece .edit-piece {
   display: none;
 }
 

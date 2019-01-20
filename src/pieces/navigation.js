@@ -47,6 +47,9 @@ const navigation = (props) => {
           }
           return (<li key={i} draggable="true" onDragStart={getDragStart(count)} className="item">{text}</li>);
         })}
+        <li>
+          <button className="edit-piece">edit navigation</button>
+        </li>
       </ul>
       {props.children}
     </div>
