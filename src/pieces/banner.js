@@ -48,13 +48,9 @@ const banner = (props) => {
   };
 
   const getPieceTools = () => {
-    if (!props.state.showTools.other) {
-      return null;
-    }
-
     if (!props.piece.showTools) {
       return (
-        <button onClick={togglePieceTools}>edit banner</button>
+        <button onClick={togglePieceTools} className="edit-piece">edit banner</button>
       );
     }
 

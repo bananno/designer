@@ -14,6 +14,14 @@
   padding: 10px;
 }
 
+.piece button.edit-piece {
+  display: none;
+}
+
+.piece:hover button.edit-piece {
+  display: block;
+}
+
 /* TITLE */
 
 .piece.title {
