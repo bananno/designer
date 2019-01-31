@@ -9,7 +9,6 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "express": "~4.16.0",
     "nodemon": "^1.18.9",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
