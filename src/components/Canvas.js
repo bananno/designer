@@ -31,9 +31,11 @@ class Canvas extends Component {
     let nextSection = [];
 
     this.props.state.pieces.forEach(piece => {
-      if (piece.type === 'break') {
-        canvasSections.push(nextSection);
-        nextSection = [];
+      if (piece.type === 'section') {
+        if (nextSection.length) {
+          canvasSections.push(nextSection);
+          nextSection = [];
+        }
       } else {
         nextSection.push(piece);
       }

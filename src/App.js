@@ -16,30 +16,33 @@ class App extends Component {
 
   componentDidMount () {
     this.addNewPiece({
-      type: 'title'
+      type: 'section'
     });
+      this.addNewPiece({
+        type: 'title'
+      });
+      this.addNewPiece({
+        type: 'navigation',
+        items: ['Home', 'Products', 'Services', 'Blog', 'Contact']
+      });
     this.addNewPiece({
-      type: 'navigation',
-      items: ['Home', 'Products', 'Services', 'Blog', 'Contact']
+      type: 'section'
     });
+      this.addNewPiece({
+        type: 'banner'
+      });
     this.addNewPiece({
-      type: 'break'
+      type: 'section'
     });
-    this.addNewPiece({
-      type: 'banner'
-    });
-    this.addNewPiece({
-      type: 'break'
-    });
-    this.addNewPiece({
-      type: 'content'
-    });
-    this.addNewPiece({
-      type: 'content'
-    });
-    this.addNewPiece({
-      type: 'content'
-    });
+      this.addNewPiece({
+        type: 'content'
+      });
+      this.addNewPiece({
+        type: 'content'
+      });
+      this.addNewPiece({
+        type: 'content'
+      });
   }
 
   setStateWrap = (newState) => {
