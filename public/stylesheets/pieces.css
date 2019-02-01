@@ -8,17 +8,21 @@
   text-decoration: underline;
 }
 
-.piece .piece-tools {
-  background-color: gray;
+.edit-piece-true .piece-tools {
   display: inline-block;
+  background-color: gray;
   padding: 10px;
 }
 
-.piece .edit-piece {
+.edit-piece-false .piece-tools {
   display: none;
 }
 
-.piece:hover button.edit-piece {
+.edit-piece-start {
+  display: none;
+}
+
+.edit-piece-false:hover button.edit-piece-start {
   display: block;
 }
 

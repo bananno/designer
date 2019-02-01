@@ -6,6 +6,22 @@ import Content from '../pieces/content.js';
 import DeleteButton from '../bits/deleteButton.js';
 
 class Piece extends Component {
+  state = {
+    showEditTools: false
+  };
+
+  showEditTools = () => {
+    this.setState({
+      showEditTools: true
+    });
+  };
+
+  hideEditTools = () => {
+    this.setState({
+      showEditTools: false
+    });
+  };
+
   togglePieceTools = (piece) => {
     return () => {
       let newState = this.props.state;
@@ -42,10 +58,10 @@ class Piece extends Component {
     let deleteButton = <DeleteButton piece={this.piece} state={this.props.state}
       setState={this.props.setState}/>
 
-    let editButtonStart = <button onClick={this.togglePieceTools(this.props.data)}
+    let editButtonStart = <button onClick={this.showEditTools}
       className="edit-piece-start">edit</button>
 
-    let editButtonDone = <button onClick={this.togglePieceTools(this.props.data)}
+    let editButtonDone = <button onClick={this.hideEditTools}
       className="edit-piece-done">done</button>
 
     if (pieceType === 'title') {
@@ -80,6 +96,7 @@ class Piece extends Component {
           editButtonStart={editButtonStart}
           editButtonDone={editButtonDone}
           deleteButton={deleteButton}
+          showEditTools={this.state.showEditTools}
           >
         </Banner>
       );
