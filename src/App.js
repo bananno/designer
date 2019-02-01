@@ -21,15 +21,25 @@ class App extends Component {
   }
 
   loadPresetCanvas = (preset) => {
-    this.setState({
+    let newState = {
       pieces: [],
       canvas: {
         "body-background-color": preset.bodyBackgroundColor,
         "body-background-color-input": preset.bodyBackgroundColor,
       },
+      pieceIdCount: this.state.pieceIdCount,
+    };
+
+    // Cannot reuse existing "addNewPiece" function; for some reason it overwrites above changes.
+    // preset.pieces.forEach(this.addNewPiece);
+
+    preset.pieces.forEach(specs => {
+      specs.id = newState.pieceIdCount;
+      newState.pieces.push(createPiece(specs));
+      newState.pieceIdCount += 1;
     });
 
-    preset.pieces.forEach(this.addNewPiece);
+    this.setState(newState);
   }
 
   addNewPiece = (specs) => {
