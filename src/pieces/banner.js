@@ -25,7 +25,7 @@ const banner = (props) => {
       {props.editButtonStart}
       <div className="piece-tools">
         background image:
-        <ImageSelector current={currentImage} change={changeBackground}/>
+        <ImageSelector value={currentImage} onChange={changeBackground}/>
         <br/>
         size:
         <EditSize piece={props.piece} changePiece={props.changePiece}/>
