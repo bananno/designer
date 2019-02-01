@@ -6,9 +6,6 @@ import Content from '../pieces/content.js';
 import DeleteButton from '../bits/deleteButton.js';
 
 class Piece extends Component {
-  pieceActions = {
-  }
-
   togglePieceTools = (piece) => {
     return () => {
       let newState = this.props.state;
@@ -16,6 +13,21 @@ class Piece extends Component {
       newState.pieces = newState.pieces.map(thisPiece => {
         if (thisPiece === piece) {
           thisPiece.showTools = !thisPiece.showTools;
+        }
+        return thisPiece;
+      });
+
+      this.props.setState(newState);
+    };
+  };
+
+  changePiece = (piece) => {
+    return (attribute, newValue) => {
+      let newState = this.props.state;
+
+      newState.pieces = newState.pieces.map(thisPiece => {
+        if (thisPiece === piece) {
+          thisPiece[attribute] = newValue;
         }
         return thisPiece;
       });
@@ -40,7 +52,6 @@ class Piece extends Component {
       return (
         <Title data={this.props.data}
           editPieceText={this.props.editPieceText}
-          pieceActions={this.pieceActions}
           showTools={this.props.showTools}
           > {deleteButton} {editButtonStart} </Title>
       );
@@ -65,9 +76,11 @@ class Piece extends Component {
         <Banner piece={this.props.piece}
           state={this.props.state}
           setState={this.props.setState}
-          editButton={editButtonStart}
+          changePiece={this.changePiece(this.props.piece)}
+          editButtonStart={editButtonStart}
+          editButtonDone={editButtonDone}
+          deleteButton={deleteButton}
           >
-          {deleteButton}
         </Banner>
       );
     }

@@ -11,60 +11,7 @@ const banner = (props) => {
   }
 
   const changeBackground = (newValue) => {
-    let newState = props.state;
-
-    newState.pieces = newState.pieces.map(thisPiece => {
-      if (thisPiece === props.piece) {
-        thisPiece.image = newValue;
-      }
-      return thisPiece;
-    });
-
-    props.setState(newState);
-  };
-
-  const changePiece = (attribute, newValue) => {
-    let newState = props.state;
-
-    newState.pieces = newState.pieces.map(thisPiece => {
-      if (thisPiece === props.piece) {
-        thisPiece[attribute] = newValue;
-      }
-      return thisPiece;
-    });
-
-    props.setState(newState);
-  };
-
-  const togglePieceTools = () => {
-    let newState = props.state;
-
-    newState.pieces = newState.pieces.map(thisPiece => {
-      if (thisPiece === props.piece) {
-        thisPiece.showTools = !thisPiece.showTools;
-      }
-      return thisPiece;
-    });
-
-    props.setState(newState);
-  };
-
-  const getPieceTools = () => {
-    if (!props.piece.showTools) {
-      return props.editButton;
-    }
-
-    return (
-      <div className="piece-tools">
-        background image:
-        <ImageSelector current={currentImage} change={changeBackground}/>
-        <br/>
-        size:
-        <EditSize piece={props.piece} changePiece={changePiece}/>
-        <br/>
-        <button onClick={togglePieceTools}>done</button>
-      </div>
-    );
+    props.changePiece('image', newValue);
   };
 
   let pieceStyle = {};
@@ -73,9 +20,17 @@ const banner = (props) => {
   pieceStyle['height'] = props.piece.height + 'px';
 
   return (
-    <div className={className}>
-      <div style={pieceStyle}>
-        {getPieceTools()}
+    <div className={className} style={pieceStyle}>
+      {props.deleteButton}
+      {props.editButtonStart}
+      <div className="piece-tools">
+        background image:
+        <ImageSelector current={currentImage} change={changeBackground}/>
+        <br/>
+        size:
+        <EditSize piece={props.piece} changePiece={props.changePiece}/>
+        <br/>
+        {props.editButtonDone}
       </div>
       {props.children}
     </div>
