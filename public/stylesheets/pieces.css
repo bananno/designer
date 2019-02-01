@@ -1,7 +1,24 @@
 
+/* SECTION */
+
+/* PIECE */
+
 .piece {
-  /*border: 2px solid red;*/
   display: inline-block;
+}
+
+/* SECTION + PIECE - SHOW/HIDE EDITING TOOLS */
+
+.edit-start-button {
+  display: none;
+}
+
+.editing-false:hover .edit-start-button {
+  display: inline-block;
+}
+
+.editing-false .edit-box {
+  display: none;
 }
 
 .piece .edit-link {
@@ -11,6 +28,10 @@
 .piece .edit-link:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.canvas-section.editing-false .piece .edit-link {
+  display: none;
 }
 
 .edit-piece-true .piece-tools {
@@ -27,25 +48,11 @@
   display: none;
 }
 
-.edit-piece-false:hover button.edit-piece-start {
+.canvas-section.editing-true .piece button.edit-piece-start {
   display: block;
 }
 
-/* SECTION */
-
-.edit-start-button {
-  display: none;
-}
-
-.editing-false:hover .edit-start-button {
-  display: inline-block;
-}
-
-.editing-false .edit-box {
-  display: none;
-}
-
-/* TITLE */
+/* PIECE - TITLE */
 
 .piece.title {
   display: inline-block;
@@ -60,7 +67,7 @@
   font-size: 40px;
 }
 
-/* BANNER */
+/* PIECE - BANNER */
 
 .piece.banner {
   background-size: 1000px;
@@ -76,7 +83,7 @@
   background-image: url("/designs/bannerbg2.jpg");
 }
 
-/* NAVIGATION */
+/* PIECE - NAVIGATION */
 
 .piece.navigation {
   display: inline-block;
@@ -105,7 +112,7 @@
   color: transparent;
 }
 
-/* CONTENT */
+/* PIECE - CONTENT */
 
 .piece.content {
   vertical-align: top;
