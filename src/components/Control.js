@@ -46,9 +46,7 @@ class Control extends Component {
   }
 
   loadPreset = () => {
-    this.props.setState({
-      pieces: []
-    });
+    this.props.loadPresetCanvas(presets[this.state.loadPresetDropdownChoice]);
   }
 
   bodyBackgroundColorChange = (e) => {

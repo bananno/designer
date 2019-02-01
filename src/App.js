@@ -21,8 +21,6 @@ class App extends Component {
   }
 
   loadPresetCanvas = (preset) => {
-    console.log(preset);
-
     this.setState({
       pieces: [],
       canvas: {
@@ -142,6 +140,7 @@ class App extends Component {
     return (
       <div className="App">
         <Control state={this.state} setState={this.setStateWrap}
+          loadPresetCanvas={this.loadPresetCanvas}
           addNewPiece={this.addNewPiece}/>
         <Canvas state={this.state} setState={this.setStateWrap}
           editPieceText={this.editPieceText}
