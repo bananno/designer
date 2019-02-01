@@ -6,7 +6,7 @@ import presets from '../constants/presets.js';
 
 class Control extends Component {
   state = {
-    bodyBackgroundColorInput: this.props.state.bodyBackgroundColor,
+    bodyBackgroundColorInput: this.props.state.bodyBackgroundColor || '',
     newPieceDropdownChoice: pieceTypes[0],
     loadPresetDropdownChoice: 0,
   };
