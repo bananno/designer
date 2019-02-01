@@ -2,52 +2,36 @@ import React, { Component } from 'react';
 import Canvas from './components/Canvas.js';
 import Control from './components/Control.js';
 import createPiece from './helpers/createPiece.js';
+import presets from './constants/presets.js';
 
 class App extends Component {
   state = {
     pieces: [],
-    canvas: {
-      "body-background-color": "blue",
-      "body-background-color-input": "blue"
-    },
+    canvas: {},
     pieceIdCount: 0,
     showTools: {},
   }
 
   componentDidMount () {
-    this.addNewPiece({
-      type: 'section',
-      backgroundColor: 'orange',
-    });
-      this.addNewPiece({
-        type: 'title'
-      });
-      this.addNewPiece({
-        type: 'navigation',
-        items: ['Home', 'Products', 'Services', 'Blog', 'Contact']
-      });
-    this.addNewPiece({
-      type: 'section'
-    });
-      this.addNewPiece({
-        type: 'banner'
-      });
-    this.addNewPiece({
-      type: 'section'
-    });
-      this.addNewPiece({
-        type: 'content'
-      });
-      this.addNewPiece({
-        type: 'content'
-      });
-      this.addNewPiece({
-        type: 'content'
-      });
+    this.loadPresetCanvas(presets[0]);
   }
 
   setStateWrap = (newState) => {
     this.setState(newState);
+  }
+
+  loadPresetCanvas = (preset) => {
+    console.log(preset);
+
+    this.setState({
+      pieces: [],
+      canvas: {
+        "body-background-color": preset.bodyBackgroundColor,
+        "body-background-color-input": preset.bodyBackgroundColor,
+      },
+    });
+
+    preset.pieces.forEach(this.addNewPiece);
   }
 
   addNewPiece = (specs) => {
