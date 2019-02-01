@@ -5,46 +5,41 @@ import createPiece from './helpers/createPiece.js';
 import toolList from './constants/tools.js';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    pieces: [],
+    canvas: {
+      "body-background-color": "blue",
+      "body-background-color-input": "blue"
+    },
+    pieceIdCount: 0,
+    showTools: {},
+  }
 
-    let initialState = {
-      pieces: [
-        createPiece({
-          type: 'title',
-          id: 0
-        }),
-        createPiece({
-          type: 'navigation',
-          items: ['Home', 'Products', 'Services', 'Blog', 'Contact'],
-          id: 1
-        }),
-        createPiece({
-          type: 'banner',
-          id: 2
-        }),
-        createPiece({
-          type: 'content',
-          id: 3
-        }),
-      ],
-      canvas: {
-        "body-background-color": "blue",
-        "body-background-color-input": "blue"
-      },
-      showTools: {},
-    };
-
-    initialState.pieceIdCount = initialState.pieces.length;
-
-    toolList.forEach(toolInfo => {
-      initialState.showTools[toolInfo.name] = false;
+  componentDidMount () {
+    this.addNewPiece({
+      type: 'title'
     });
-
-    this.state = initialState;
+    this.addNewPiece({
+      type: 'navigation',
+      items: ['Home', 'Products', 'Services', 'Blog', 'Contact']
+    });
+    this.addNewPiece({
+      type: 'banner'
+    });
+    this.addNewPiece({
+      type: 'content'
+    });
   }
 
   setStateWrap = (newState) => {
+    this.setState(newState);
+  }
+
+  addNewPiece = (specs) => {
+    specs.id = this.state.pieceIdCount;
+    var newState = this.state;
+    newState.pieces.push(createPiece(specs));
+    newState.pieceIdCount += 1;
     this.setState(newState);
   }
 
