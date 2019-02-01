@@ -3,8 +3,6 @@ import Canvas from './components/Canvas.js';
 import Control from './components/Control.js';
 import createPiece from './helpers/createPiece.js';
 import toolList from './constants/tools.js';
-import './App.css';
-import './pieces/pieces.css';
 
 class App extends Component {
   constructor(props) {
