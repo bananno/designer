@@ -4,6 +4,7 @@ class Section extends Component {
   state = {
     showEditTools: false,
     backgroundColorInput: this.props.section.backgroundColor || '',
+    widthInput: this.props.section.width || '100%',
   }
 
   changeSectionState = (attribute, newValue) => {
@@ -29,6 +30,7 @@ class Section extends Component {
     this.setState({
       showEditTools: false,
       backgroundColorInput: this.props.section.backgroundColor || '',
+      widthInput: this.props.section.width || '100%',
     });
   }
 
@@ -38,8 +40,18 @@ class Section extends Component {
     });
   }
 
+  editWidthInput = (e) => {
+    this.setState({
+      widthInput: e.target.value
+    });
+  }
+
   saveNewBackgroundColor = () => {
     this.changeSectionState('backgroundColor', this.state.backgroundColorInput);
+  }
+
+  saveNewWidth = () => {
+    this.changeSectionState('width', this.state.widthInput);
   }
 
   render() {
@@ -61,9 +73,14 @@ class Section extends Component {
         </div>
         <div className="edit-box">
           <div>
-            Background color:
+            Section background color:
             <input value={this.state.backgroundColorInput} onChange={this.editBackgroundColorInput}/>
             <button onClick={this.saveNewBackgroundColor}>save</button>
+          </div>
+          <div>
+            Section width:
+            <input value={this.state.widthInput} onChange={this.editWidthInput}/>
+            <button onClick={this.saveNewWidth}>save</button>
           </div>
           <button onClick={this.hideEditTools} className="done-button">done</button>
         </div>
