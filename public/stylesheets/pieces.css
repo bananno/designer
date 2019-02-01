@@ -1,6 +1,7 @@
 
 .piece {
   /*border: 2px solid red;*/
+  display: inline-block;
 }
 
 .piece .edit-link {
@@ -105,3 +106,12 @@
 }
 
 /* CONTENT */
+
+.piece.content {
+  vertical-align: top;
+}
+
+.piece.content p {
+  text-align: justify;
+  padding: 5px;
+}
