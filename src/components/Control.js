@@ -6,6 +6,7 @@ import presets from '../constants/presets.js';
 
 class Control extends Component {
   state = {
+    bodyBackgroundColorInput: this.props.state.bodyBackgroundColor,
     newPieceDropdownChoice: pieceTypes[0],
     loadPresetDropdownChoice: 0,
   };
@@ -50,25 +51,24 @@ class Control extends Component {
   }
 
   bodyBackgroundColorChange = (e) => {
-    let newState = this.props.state;
-    newState.canvas['body-background-color-input'] = e.target.value;
-    this.props.setState(newState);
+    this.setState({
+      bodyBackgroundColorInput: e.target.value
+    });
   }
 
   bodyBackgroundColorSave = () => {
-    let newState = this.props.state;
-    newState.canvas['body-background-color'] = newState.canvas['body-background-color-input'];
-    this.props.setState(newState);
+    this.props.setState({
+      bodyBackgroundColor: this.state.bodyBackgroundColorInput
+    });
   }
 
   bodyBackgroundColorReset = () => {
-    let newState = this.props.state;
-    newState.canvas['body-background-color-input'] = newState.canvas['body-background-color'];
-    this.props.setState(newState);
+    this.setState({
+      bodyBackgroundColorInput: this.props.state.bodyBackgroundColor
+    });
   }
 
   render() {
-    var bodyBackgroundColor = this.props.state.canvas['body-background-color-input'];
     return (
       <div id="control">
         <h1>Controls</h1>
@@ -86,7 +86,8 @@ class Control extends Component {
 
         <div>
           Body background color:
-          <input value={bodyBackgroundColor} onChange={this.bodyBackgroundColorChange}/>
+          <input value={this.state.bodyBackgroundColorInput}
+            onChange={this.bodyBackgroundColorChange}/>
           <button onClick={this.bodyBackgroundColorSave}>save</button>
           <button onClick={this.bodyBackgroundColorReset}>cancel</button>
         </div>

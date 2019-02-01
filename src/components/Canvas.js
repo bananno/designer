@@ -33,8 +33,6 @@ class Canvas extends Component {
   }
 
   render() {
-    var bodyBackgroundColor = this.props.state.canvas['body-background-color'];
-
     let canvasSections = [];
     let nextSection = [];
 
@@ -52,8 +50,12 @@ class Canvas extends Component {
 
     canvasSections.push(nextSection);
 
+    let style = {
+      backgroundColor: this.props.state.bodyBackgroundColor || 'white'
+    };
+
     return (
-      <div id="canvas" style={{"backgroundColor": bodyBackgroundColor}}>
+      <div id="canvas" style={style}>
         {canvasSections.map(this.mapCanvasSections)}
       </div>
     );

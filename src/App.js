@@ -7,7 +7,6 @@ import presets from './constants/presets.js';
 class App extends Component {
   state = {
     pieces: [],
-    canvas: {},
     pieceIdCount: 0,
     showTools: {},
   }
@@ -23,10 +22,7 @@ class App extends Component {
   loadPresetCanvas = (preset) => {
     let newState = {
       pieces: [],
-      canvas: {
-        "body-background-color": preset.bodyBackgroundColor,
-        "body-background-color-input": preset.bodyBackgroundColor,
-      },
+      bodyBackgroundColor: preset.bodyBackgroundColor,
       pieceIdCount: this.state.pieceIdCount,
     };
 
