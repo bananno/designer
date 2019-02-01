@@ -51,9 +51,7 @@ const banner = (props) => {
 
   const getPieceTools = () => {
     if (!props.piece.showTools) {
-      return (
-        <button onClick={togglePieceTools} className="edit-piece">edit banner</button>
-      );
+      return props.editButton;
     }
 
     return (

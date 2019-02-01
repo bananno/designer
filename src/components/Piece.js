@@ -58,7 +58,10 @@ class Piece extends Component {
         <Banner piece={this.props.piece}
           state={this.props.state}
           setState={this.props.setState}
-          > {deleteButton} {editButton} </Banner>
+          editButton={editButton}
+          >
+          {deleteButton}
+        </Banner>
       );
     }
 
