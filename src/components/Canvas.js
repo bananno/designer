@@ -12,7 +12,8 @@ class Canvas extends Component {
     let pieces = pieceList.slice(1);
 
     return (
-      <Section section={section} key={section.id}>
+      <Section section={section} key={section.id}
+          state={this.props.state} setState={this.props.setState}>
         {pieces.map(this.mapPieces)}
       </Section>
     );
