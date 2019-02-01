@@ -114,7 +114,11 @@ class Piece extends Component {
           state={this.props.state}
           setState={this.props.setState}
           classNames={classNames}
-          > {deleteButton} {editButtonStart} </Content>
+          editButtonStart={editButtonStart}
+          editButtonDone={editButtonDone}
+          deleteButton={deleteButton}
+          >
+        </Content>
       );
     }
 
