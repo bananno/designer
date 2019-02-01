@@ -8,8 +8,9 @@ const dropdown = (props) => {
   return (
     <select onChange={onChange} value={props.value}>
       {props.options.map((option, i) => {
+        let value = props.useIndexAsValue ? i : option;
         return (
-          <option value={option} key={i}>
+          <option value={value} key={i}>
             {option}
           </option>
         );
