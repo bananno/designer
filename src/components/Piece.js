@@ -22,19 +22,17 @@ class Piece extends Component {
     });
   };
 
-  changePiece = (piece) => {
-    return (attribute, newValue) => {
-      let newState = this.props.state;
+  changePiece = (attribute, newValue) => {
+    let newState = this.props.state;
 
-      newState.pieces = newState.pieces.map(thisPiece => {
-        if (thisPiece === piece) {
-          thisPiece[attribute] = newValue;
-        }
-        return thisPiece;
-      });
+    newState.pieces = newState.pieces.map(thisPiece => {
+      if (thisPiece === this.props.piece) {
+        thisPiece[attribute] = newValue;
+      }
+      return thisPiece;
+    });
 
-      this.props.setState(newState);
-    };
+    this.props.setState(newState);
   };
 
   render() {
@@ -71,6 +69,7 @@ class Piece extends Component {
         <Navigation piece={this.props.piece}
           state={this.props.state}
           setState={this.props.setState}
+          changePiece={this.changePiece}
           reorderPieceItems={this.props.reorderPieceItems}
           editButtonStart={editButtonStart}
           editButtonDone={editButtonDone}
@@ -86,7 +85,7 @@ class Piece extends Component {
         <Banner piece={this.props.piece}
           state={this.props.state}
           setState={this.props.setState}
-          changePiece={this.changePiece(this.props.piece)}
+          changePiece={this.changePiece}
           editButtonStart={editButtonStart}
           editButtonDone={editButtonDone}
           deleteButton={deleteButton}
