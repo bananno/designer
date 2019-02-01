@@ -9,11 +9,29 @@ class Piece extends Component {
   pieceActions = {
   }
 
+  togglePieceTools = (piece) => {
+    return () => {
+      let newState = this.props.state;
+
+      newState.pieces = newState.pieces.map(thisPiece => {
+        if (thisPiece === piece) {
+          thisPiece.showTools = !thisPiece.showTools;
+        }
+        return thisPiece;
+      });
+
+      this.props.setState(newState);
+    };
+  };
+
   render() {
     const pieceType = this.props.data.type;
 
     let deleteButton = <DeleteButton piece={this.piece} state={this.props.state}
       setState={this.props.setState}/>
+
+    let editButton = <button onClick={this.togglePieceTools(this.props.data)}
+      className="edit-piece">edit</button>
 
     if (pieceType === 'title') {
       return (
@@ -21,7 +39,7 @@ class Piece extends Component {
           editPieceText={this.props.editPieceText}
           pieceActions={this.pieceActions}
           showTools={this.props.showTools}
-          > {deleteButton} </Title>
+          > {deleteButton} {editButton} </Title>
       );
     }
 
@@ -31,7 +49,7 @@ class Piece extends Component {
           state={this.props.state}
           setState={this.props.setState}
           reorderPieceItems={this.props.reorderPieceItems}
-          > {deleteButton} </Navigation>
+          > {deleteButton} {editButton} </Navigation>
       );
     }
 
@@ -40,7 +58,7 @@ class Piece extends Component {
         <Banner piece={this.props.piece}
           state={this.props.state}
           setState={this.props.setState}
-          > {deleteButton} </Banner>
+          > {deleteButton} {editButton} </Banner>
       );
     }
 
@@ -49,7 +67,7 @@ class Piece extends Component {
         <Content piece={this.props.piece}
           state={this.props.state}
           setState={this.props.setState}
-          > {deleteButton} </Content>
+          > {deleteButton} {editButton} </Content>
       );
     }
 
@@ -57,6 +75,8 @@ class Piece extends Component {
       <div>
         PIECE (type = {pieceType})
         {this.props.children}
+        {deleteButton}
+        {editButton}
       </div>
     );
   }
