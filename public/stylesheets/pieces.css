@@ -30,6 +30,20 @@
   display: block;
 }
 
+/* SECTION */
+
+.edit-start-button {
+  display: none;
+}
+
+.editing-false:hover .edit-start-button {
+  display: inline-block;
+}
+
+.editing-false .edit-box {
+  display: none;
+}
+
 /* TITLE */
 
 .piece.title {
