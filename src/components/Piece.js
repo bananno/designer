@@ -73,6 +73,7 @@ class Piece extends Component {
         <Title data={this.props.data}
           editPieceText={this.props.editPieceText}
           showTools={this.props.showTools}
+          classNames={classNames}
           > {deleteButton} {editButtonStart} </Title>
       );
     }
@@ -85,6 +86,7 @@ class Piece extends Component {
           reorderPieceItems={this.props.reorderPieceItems}
           editButtonStart={editButtonStart}
           editButtonDone={editButtonDone}
+          classNames={classNames}
           >
           {deleteButton}
         </Navigation>
@@ -111,12 +113,13 @@ class Piece extends Component {
         <Content piece={this.props.piece}
           state={this.props.state}
           setState={this.props.setState}
+          classNames={classNames}
           > {deleteButton} {editButtonStart} </Content>
       );
     }
 
     return (
-      <div>
+      <div classNames={classNames.join(' ')}>
         PIECE (type = {pieceType})
         {this.props.children}
         {deleteButton}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const content = (props) => {
-  let className = 'piece content';
+  let className = props.classNames;
 
   const changePiece = (attribute, newValue) => {
     let newState = props.state;
@@ -46,7 +46,7 @@ const content = (props) => {
   let pieceStyle = {};
 
   return (
-    <div className={className}>
+    <div className={className.join(' ')}>
       <div style={pieceStyle}>
         {getPieceTools()}
       </div>

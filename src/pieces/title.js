@@ -1,6 +1,8 @@
 import React from 'react';
 
 const title = (props) => {
+  let className = props.classNames;
+
   const editTextStart = () => {
     props.editPieceText.toggleView(props.data.id, true);
   };
@@ -20,7 +22,7 @@ const title = (props) => {
 
   if (props.data.editing) {
     return (
-      <div className="piece title">
+      <div className={className.join(' ')}>
         <div className="edit">
           <input onChange={editTextTypeInput} value={props.data.textInput}/>
         </div>
@@ -31,7 +33,7 @@ const title = (props) => {
   }
 
   return (
-    <div className="piece title">
+    <div className={className.join(' ')}>
       <div className="display">
         {props.data.text}
       </div>

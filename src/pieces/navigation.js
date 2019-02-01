@@ -1,6 +1,7 @@
 import React from 'react';
 
 const navigation = (props) => {
+  let className = props.classNames;
   const pieceId = props.piece.id;
   const showDragAndDrop = props.state.showTools.reorder;
   const currentlyDragging = props.piece.dragging !== null;
@@ -35,7 +36,7 @@ const navigation = (props) => {
   let count = -1;
 
   return (
-    <div className="piece navigation">
+    <div className={className.join(' ')}>
       <ul>
         {itemSpread.map((text, i) => {
           if (!showDragAndDrop) {
