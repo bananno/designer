@@ -55,11 +55,14 @@ class Piece extends Component {
 
     if (pieceType === 'title') {
       return (
-        <Title data={this.props.data}
+        <Title piece={this.props.piece}
           editPieceText={this.props.editPieceText}
-          showTools={this.props.showTools}
+          editButtonStart={editButtonStart}
+          editButtonDone={editButtonDone}
+          deleteButton={deleteButton}
           classNames={classNames}
-          > {deleteButton} {editButtonStart} </Title>
+          >
+        </Title>
       );
     }
 
