@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Title from '../pieces/title.js';
 import Navigation from '../pieces/navigation.js';
 import Banner from '../pieces/banner.js';
+import Content from '../pieces/content.js';
 
 class Piece extends Component {
   pieceActions = {
@@ -37,6 +38,15 @@ class Piece extends Component {
           state={this.props.state}
           setState={this.props.setState}
           > {this.props.children} </Banner>
+      );
+    }
+
+    if (pieceType === 'content') {
+      return (
+        <Content piece={this.props.piece}
+          state={this.props.state}
+          setState={this.props.setState}
+          > {this.props.children} </Content>
       );
     }
 
