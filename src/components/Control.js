@@ -6,7 +6,6 @@ import presets from '../constants/presets.js';
 
 class Control extends Component {
   state = {
-    bodyBackgroundColorInput: this.props.state.bodyBackgroundColor || '',
     newPieceDropdownChoice: pieceTypes[0],
     loadPresetDropdownChoice: 0,
   };
@@ -51,19 +50,19 @@ class Control extends Component {
   }
 
   bodyBackgroundColorChange = (e) => {
-    this.setState({
+    this.props.setState({
       bodyBackgroundColorInput: e.target.value
     });
   }
 
   bodyBackgroundColorSave = () => {
     this.props.setState({
-      bodyBackgroundColor: this.state.bodyBackgroundColorInput
+      bodyBackgroundColor: this.props.state.bodyBackgroundColorInput
     });
   }
 
   bodyBackgroundColorReset = () => {
-    this.setState({
+    this.props.setState({
       bodyBackgroundColorInput: this.props.state.bodyBackgroundColor
     });
   }
@@ -86,7 +85,7 @@ class Control extends Component {
 
         <div>
           Body background color:
-          <input value={this.state.bodyBackgroundColorInput}
+          <input value={this.props.state.bodyBackgroundColorInput || ''}
             onChange={this.bodyBackgroundColorChange}/>
           <button onClick={this.bodyBackgroundColorSave}>save</button>
           <button onClick={this.bodyBackgroundColorReset}>cancel</button>

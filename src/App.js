@@ -23,6 +23,7 @@ class App extends Component {
     let newState = {
       pieces: [],
       bodyBackgroundColor: preset.bodyBackgroundColor,
+      bodyBackgroundColorInput: preset.bodyBackgroundColor,
       pieceIdCount: this.state.pieceIdCount,
     };
 
