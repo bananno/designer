@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import Dropdown from '../bits/dropdown.js';
 import pieceTypes from '../constants/pieceTypes.js';
 import toolList from '../constants/tools.js';
+import presets from '../constants/presets.js';
 
 class Control extends Component {
   state = {
     newPieceDropdownChoice: pieceTypes[0],
+    loadPresetDropdownChoice: presets[0],
   };
 
   mapToolList = (toolInfo, i) => {
@@ -31,9 +33,21 @@ class Control extends Component {
     });
   }
 
+  changePresetDropdown = (newValue) => {
+    this.setState({
+      loadPresetDropdownChoice: newValue
+    });
+  }
+
   addNewPiece = () => {
     this.props.addNewPiece({
       type: this.state.newPieceDropdownChoice
+    });
+  }
+
+  loadPreset = () => {
+    this.props.setState({
+      pieces: []
     });
   }
 
@@ -60,6 +74,14 @@ class Control extends Component {
     return (
       <div id="control">
         <h1>Controls</h1>
+
+        <div>
+          Load preset canvas:
+          <Dropdown options={presets}
+            value={this.state.loadPresetDropdownChoice}
+            onChange={this.changePresetDropdown}/>
+          <button onClick={this.loadPreset}>load</button>
+        </div>
 
         {toolList.map(this.mapToolList)}
 
