@@ -16,7 +16,8 @@ class App extends Component {
 
   componentDidMount () {
     this.addNewPiece({
-      type: 'section'
+      type: 'section',
+      backgroundColor: 'orange',
     });
       this.addNewPiece({
         type: 'title'

@@ -20,8 +20,14 @@ class Section extends Component {
   render() {
     let className = 'canvas-section editing-' + this.state.showEditTools;
 
+    let sectionStyle = {};
+
+    if (this.props.section.backgroundColor) {
+      sectionStyle.backgroundColor = this.props.section.backgroundColor;
+    }
+
     return (
-      <div className={className}>
+      <div className={className} style={sectionStyle}>
         <div>
           <button onClick={this.showEditTools} className="edit-start-button">edit section</button>
         </div>

@@ -4,9 +4,16 @@ import Piece from './Piece.js';
 
 class Canvas extends Component {
   mapCanvasSections = (pieceList, i) => {
+    if (pieceList.length === 0) {
+      return null;
+    }
+
+    let section = pieceList[0];
+    let pieces = pieceList.slice(1);
+
     return (
-      <Section key={i}>
-        {pieceList.map(this.mapPieces)}
+      <Section section={section} key={section.id}>
+        {pieces.map(this.mapPieces)}
       </Section>
     );
   }
@@ -36,6 +43,7 @@ class Canvas extends Component {
           canvasSections.push(nextSection);
           nextSection = [];
         }
+        nextSection.push(piece);
       } else {
         nextSection.push(piece);
       }
