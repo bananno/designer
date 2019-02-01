@@ -7,7 +7,7 @@ import presets from '../constants/presets.js';
 class Control extends Component {
   state = {
     newPieceDropdownChoice: pieceTypes[0],
-    loadPresetDropdownChoice: presets[0],
+    loadPresetDropdownChoice: 0,
   };
 
   mapToolList = (toolInfo, i) => {
@@ -77,7 +77,8 @@ class Control extends Component {
 
         <div>
           Load preset canvas:
-          <Dropdown options={presets}
+          <Dropdown options={presets.map((_, i) => { return 'preset #' + (i + 1); })}
+            useIndexAsValue={true}
             value={this.state.loadPresetDropdownChoice}
             onChange={this.changePresetDropdown}/>
           <button onClick={this.loadPreset}>load</button>
