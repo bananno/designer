@@ -79,6 +79,10 @@
 
 /* NAVIGATION */
 
+.piece.navigation {
+  display: inline-block;
+}
+
 .piece.navigation ul {
   list-style: none;
 }
