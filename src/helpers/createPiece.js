@@ -2,7 +2,7 @@
 import bannerBgImages from '../constants/bannerBgImages.js';
 
 function createPiece(newPiece) {
-  newPiece = newPiece || {};
+  newPiece = {...(newPiece || {})};
 
   if (newPiece.type == null) {
     newPiece.type = 'other';
