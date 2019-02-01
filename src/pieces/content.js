@@ -8,11 +8,15 @@ const content = (props) => {
 
   return (
     <div className={className.join(' ')} style={pieceStyle}>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit id tortor
-        eget feugiat. Fusce at urna tincidunt, gravida tellus eget, egestas nulla. Praesent
-        laoreet augue purus, nec ornare libero finibus a. Vivamus eu dapibus sem, at porta magna.
-      </p>
+      {
+        props.piece.text.map((text, i) => {
+          return (
+            <p key={i}>
+              {text}
+            </p>
+          );
+        })
+      }
       {props.deleteButton}
       {props.editButtonStart}
       <div className="piece-tools">

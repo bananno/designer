@@ -1,5 +1,8 @@
-
 import bannerBgImages from '../constants/bannerBgImages.js';
+
+const loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ' +
+  'hendrerit id tortor eget feugiat. Fusce at urna tincidunt, gravida tellus eget, egestas ' +
+  'nulla. Praesent laoreet augue purus, nec ornare. Vivamus eu dapibus sem, at porta magna.';
 
 function createPiece(newPiece) {
   newPiece = {...(newPiece || {})};
@@ -22,6 +25,8 @@ function createPiece(newPiece) {
     newPiece.widthInput = newPiece.width;
     newPiece.heightInput = newPiece.height;
     newPiece.showTools = false;
+  } else if (newPiece.type === 'content') {
+    newPiece.text = [].concat(newPiece.text || [loremIpsum]);
   }
 
   return newPiece;
