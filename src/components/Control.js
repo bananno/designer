@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import createPiece from '../helpers/createPiece.js';
+import Dropdown from '../bits/dropdown.js';
 import pieceTypes from '../constants/pieceTypes.js';
 import toolList from '../constants/tools.js';
 
 class Control extends Component {
+  state = {
+    newPieceDropdownChoice: pieceTypes[0],
+  };
+
   mapToolList = (toolInfo, i) => {
     const toggle = () => {
       let newState = this.props.state;
@@ -21,16 +25,16 @@ class Control extends Component {
     );
   }
 
-  addNewPiece = () => {
-    var newState = this.props.state;
-    var pieceType = document.getElementById('addNewPieceType').value;
-    let newPiece = createPiece({
-      type: pieceType,
-      id: newState.pieceIdCount
+  changeNewPieceDropdown = (newValue) => {
+    this.setState({
+      newPieceDropdownChoice: newValue
     });
-    newState.pieces.push(newPiece);
-    newState.pieceIdCount += 1;
-    this.props.setState(newState);
+  }
+
+  addNewPiece = () => {
+    this.props.addNewPiece({
+      type: this.state.newPieceDropdownChoice
+    });
   }
 
   bodyBackgroundColorChange = (e) => {
@@ -68,11 +72,8 @@ class Control extends Component {
 
         <div>
           Add new piece:
-          <select id="addNewPieceType">
-            {pieceTypes.map((pieceType, i) => {
-              return <option value={pieceType} key={i}>{pieceType}</option>;
-            })}
-          </select>
+          <Dropdown options={pieceTypes} value={this.state.newPieceDropdownChoice}
+            onChange={this.changeNewPieceDropdown}/>
           <button onClick={this.addNewPiece}>add</button>
         </div>
       </div>

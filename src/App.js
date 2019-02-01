@@ -142,7 +142,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Control state={this.state} setState={this.setStateWrap}/>
+        <Control state={this.state} setState={this.setStateWrap}
+          addNewPiece={this.addNewPiece}/>
         <Canvas state={this.state} setState={this.setStateWrap}
           editPieceText={this.editPieceText}
           reorderPieceItems={this.reorderPieceItems}/>
