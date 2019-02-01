@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import Section from './Section.js';
 import Piece from './Piece.js';
 
 class Canvas extends Component {
-  mapCanvasSections = (thisBox, i) => {
+  mapCanvasSections = (pieceList, i) => {
     return (
-      <div className="canvas-section" key={i}>
-        {thisBox.map(this.mapPieces)}
-      </div>
+      <Section key={i}>
+        {pieceList.map(this.mapPieces)}
+      </Section>
     );
   }
 
