@@ -35,8 +35,14 @@ const navigation = (props) => {
 
   let count = -1;
 
+  let pieceStyle = {};
+
+  if (true) { // props.piece.display == 'inline') {
+    pieceStyle.display = 'inline-block';
+  }
+
   return (
-    <div className={className.join(' ')}>
+    <div className={className.join(' ')} style={pieceStyle}>
       <ul>
         {itemSpread.map((text, i) => {
           if (!showDragAndDrop) {

@@ -13,6 +13,7 @@ function createPiece(newPiece) {
   } else if (newPiece.type === 'navigation') {
     newPiece.items = newPiece.items || ['Link Here'];
     newPiece.dragging = null;
+    newPiece.display = 'block';
   } else if (newPiece.type === 'banner') {
     newPiece.image = newPiece.image || bannerBgImages[0];
     newPiece.width = 800;
