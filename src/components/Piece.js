@@ -22,21 +22,6 @@ class Piece extends Component {
     });
   };
 
-  togglePieceTools = (piece) => {
-    return () => {
-      let newState = this.props.state;
-
-      newState.pieces = newState.pieces.map(thisPiece => {
-        if (thisPiece === piece) {
-          thisPiece.showTools = !thisPiece.showTools;
-        }
-        return thisPiece;
-      });
-
-      this.props.setState(newState);
-    };
-  };
-
   changePiece = (piece) => {
     return (attribute, newValue) => {
       let newState = this.props.state;
