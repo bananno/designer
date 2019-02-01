@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-
 import Title from '../pieces/title.js';
 import Navigation from '../pieces/navigation.js';
 import Banner from '../pieces/banner.js';
 import Content from '../pieces/content.js';
+import DeleteButton from '../bits/deleteButton.js';
 
 class Piece extends Component {
   pieceActions = {
@@ -12,13 +12,16 @@ class Piece extends Component {
   render() {
     const pieceType = this.props.data.type;
 
+    let deleteButton = <DeleteButton piece={this.piece} state={this.props.state}
+      setState={this.props.setState}/>
+
     if (pieceType === 'title') {
       return (
         <Title data={this.props.data}
           editPieceText={this.props.editPieceText}
           pieceActions={this.pieceActions}
           showTools={this.props.showTools}
-          > {this.props.children} </Title>
+          > {deleteButton} </Title>
       );
     }
 
@@ -28,7 +31,7 @@ class Piece extends Component {
           state={this.props.state}
           setState={this.props.setState}
           reorderPieceItems={this.props.reorderPieceItems}
-          > {this.props.children} </Navigation>
+          > {deleteButton} </Navigation>
       );
     }
 
@@ -37,7 +40,7 @@ class Piece extends Component {
         <Banner piece={this.props.piece}
           state={this.props.state}
           setState={this.props.setState}
-          > {this.props.children} </Banner>
+          > {deleteButton} </Banner>
       );
     }
 
@@ -46,7 +49,7 @@ class Piece extends Component {
         <Content piece={this.props.piece}
           state={this.props.state}
           setState={this.props.setState}
-          > {this.props.children} </Content>
+          > {deleteButton} </Content>
       );
     }
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Piece from './Piece.js';
-import DeleteButton from '../bits/deleteButton.js';
 
 class Canvas extends Component {
   mapPieces = (thisPiece, i) => {
@@ -10,10 +9,8 @@ class Canvas extends Component {
         setState={this.props.setState}
         piece={thisPiece}
         showTools={this.props.state.showTools}
-        reorderPieceItems={this.props.reorderPieceItems}>
-          <DeleteButton piece={thisPiece} state={this.props.state}
-            setState={this.props.setState}/>
-      </Piece>
+        reorderPieceItems={this.props.reorderPieceItems}
+        />
     );
   }
 
