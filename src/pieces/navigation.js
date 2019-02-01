@@ -1,4 +1,5 @@
 import React from 'react';
+import Dropdown from '../bits/dropdown.js';
 
 const navigation = (props) => {
   let className = props.classNames;
@@ -21,6 +22,10 @@ const navigation = (props) => {
     };
   };
 
+  const changeDisplay = (newValue) => {
+    props.changePiece('display', newValue);
+  };
+
   let itemSpread = [];
 
   if (showDragAndDrop) {
@@ -37,7 +42,7 @@ const navigation = (props) => {
 
   let pieceStyle = {};
 
-  if (true) { // props.piece.display == 'inline') {
+  if (props.piece.display == 'inline') {
     pieceStyle.display = 'inline-block';
   }
 
@@ -59,6 +64,9 @@ const navigation = (props) => {
         </li>
       </ul>
       <div className="piece-tools">
+        Display:
+        <Dropdown options={['block','inline']} value={props.piece.display} onChange={changeDisplay}/>
+        <br/>
         {props.editButtonDone}
       </div>
       {props.children}
