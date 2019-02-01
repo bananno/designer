@@ -3,14 +3,12 @@ import ImageSelector from '../bits/imageSelector.js';
 import EditSize from '../bits/editSize.js';
 
 const banner = (props) => {
-  let className = ['piece banner'];
+  let className = props.classNames;
   let currentImage = props.piece.image;
 
   if (currentImage) {
     className.push(currentImage);
   }
-
-  className.push('edit-piece-' + props.showEditTools);
 
   const changeBackground = (newValue) => {
     props.changePiece('image', newValue);

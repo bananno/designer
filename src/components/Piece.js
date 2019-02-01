@@ -64,6 +64,10 @@ class Piece extends Component {
     let editButtonDone = <button onClick={this.hideEditTools}
       className="edit-piece-done">done</button>
 
+    let classNames = ['piece', pieceType];
+
+    classNames.push('edit-piece-' + this.state.showEditTools);
+
     if (pieceType === 'title') {
       return (
         <Title data={this.props.data}
@@ -96,7 +100,7 @@ class Piece extends Component {
           editButtonStart={editButtonStart}
           editButtonDone={editButtonDone}
           deleteButton={deleteButton}
-          showEditTools={this.state.showEditTools}
+          classNames={classNames}
           >
         </Banner>
       );
