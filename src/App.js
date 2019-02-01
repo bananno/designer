@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Canvas from './components/Canvas.js';
 import Control from './components/Control.js';
 import createPiece from './helpers/createPiece.js';
-import toolList from './constants/tools.js';
 
 class App extends Component {
   state = {
@@ -24,7 +23,19 @@ class App extends Component {
       items: ['Home', 'Products', 'Services', 'Blog', 'Contact']
     });
     this.addNewPiece({
+      type: 'break'
+    });
+    this.addNewPiece({
       type: 'banner'
+    });
+    this.addNewPiece({
+      type: 'break'
+    });
+    this.addNewPiece({
+      type: 'content'
+    });
+    this.addNewPiece({
+      type: 'content'
     });
     this.addNewPiece({
       type: 'content'
