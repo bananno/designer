@@ -46,10 +46,13 @@ class Section extends Component {
     let className = 'canvas-section editing-' + this.state.showEditTools;
 
     let sectionStyle = {};
+    let innerStyle = {};
 
     if (this.props.section.backgroundColor) {
       sectionStyle.backgroundColor = this.props.section.backgroundColor;
     }
+
+    innerStyle.width = this.props.section.width;
 
     return (
       <div className={className} style={sectionStyle}>
@@ -64,7 +67,9 @@ class Section extends Component {
           </div>
           <button onClick={this.hideEditTools} className="done-button">done</button>
         </div>
-        {this.props.children}
+        <div className="canvas-section-inner" style={innerStyle}>
+          {this.props.children}
+        </div>
       </div>
     );
   }

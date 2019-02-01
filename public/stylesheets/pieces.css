@@ -1,6 +1,18 @@
 
 /* SECTION */
 
+.canvas-section {
+  width: 100%;
+}
+
+.canvas-section-inner {
+  margin: auto;
+}
+
+.canvas-section.editing-true {
+  border: 3px solid red;
+}
+
 /* PIECE */
 
 .piece {

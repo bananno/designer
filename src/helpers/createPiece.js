@@ -6,6 +6,8 @@ function createPiece(newPiece) {
 
   if (newPiece.type == null) {
     newPiece.type = 'other';
+  } else if (newPiece.type === 'section') {
+    newPiece.width = '80%';
   } else if (newPiece.type === 'title') {
     newPiece.text = newPiece.text || 'TITLE';
     newPiece.textInput = newPiece.text;
