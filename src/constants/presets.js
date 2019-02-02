@@ -29,7 +29,7 @@ presets.push({
     { type: 'title', text: 'TITLE HERE' },
     { type: 'navigation', items: ['HOME', 'ABOUT', 'SERVICES', 'CONTACT'] },
     { type: 'section' },
-    { type: 'banner', image: 'none' },
+    { type: 'banner', image: 'none', backgroundColor: '#22b3c9' },
     { type: 'section', backgroundColor: '#dfdfdf' },
     { type: 'content' },
     { type: 'content' },
