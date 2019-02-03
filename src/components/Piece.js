@@ -9,19 +9,19 @@ class Piece extends Component {
   state = {
     showEditTools: false,
     backgroundColorInput: this.props.piece.backgroundColor,
-  };
+  }
 
   showEditTools = () => {
     this.setState({
       showEditTools: true
     });
-  };
+  }
 
   hideEditTools = () => {
     this.setState({
       showEditTools: false
     });
-  };
+  }
 
   changePiece = (attribute, newValue) => {
     let newState = this.props.state;
@@ -34,15 +34,18 @@ class Piece extends Component {
     });
 
     this.props.setState(newState);
-  };
+  }
 
   changeBackgroundColorInput = (e) => {
+    console.log('changeBackgroundColorInput')
     this.setState({
       backgroundColorInput: e.target.value
     });
   }
 
   saveBackgroundColor = () => {
+    console.log('saveBackgroundColor')
+    console.log(this.state.backgroundColorInput)
     this.changePiece('backgroundColor', this.state.backgroundColorInput);
   }
 
@@ -70,6 +73,12 @@ class Piece extends Component {
     let classNames = ['piece', pieceType];
 
     classNames.push('edit-piece-' + this.state.showEditTools);
+
+    let pieceStyle = {};
+
+    if (this.props.piece.backgroundColor) {
+      pieceStyle.backgroundColor = this.props.piece.backgroundColor;
+    }
 
     if (pieceType === 'title') {
       return (
@@ -110,6 +119,7 @@ class Piece extends Component {
           editButtonDone={editButtonDone}
           deleteButton={deleteButton}
           classNames={classNames}
+          pieceStyle={pieceStyle}
           editBackgroundColorForm={editBackgroundColorForm}
           >
         </Banner>
@@ -122,9 +132,11 @@ class Piece extends Component {
           state={this.props.state}
           setState={this.props.setState}
           classNames={classNames}
+          pieceStyle={pieceStyle}
           editButtonStart={editButtonStart}
           editButtonDone={editButtonDone}
           deleteButton={deleteButton}
+          editBackgroundColorForm={editBackgroundColorForm}
           >
         </Content>
       );

@@ -2,7 +2,7 @@ import React from 'react';
 
 const content = (props) => {
   let className = props.classNames;
-  let pieceStyle = {};
+  let pieceStyle = props.pieceStyle;
 
   pieceStyle.width = '33%';
 
@@ -20,6 +20,7 @@ const content = (props) => {
       {props.deleteButton}
       {props.editButtonStart}
       <div className="piece-tools">
+        {props.editBackgroundColorForm}
         {props.editButtonDone}
       </div>
       {props.children}

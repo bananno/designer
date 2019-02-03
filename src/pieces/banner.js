@@ -14,14 +14,10 @@ const banner = (props) => {
     props.changePiece('image', newValue);
   };
 
-  let pieceStyle = {};
+  let pieceStyle = props.pieceStyle;
 
   pieceStyle['width'] = props.piece.width + 'px';
   pieceStyle['height'] = props.piece.height + 'px';
-
-  if (props.piece.backgroundColor) {
-    pieceStyle.backgroundColor = props.piece.backgroundColor;
-  }
 
   return (
     <div className={className.join(' ')} style={pieceStyle}>
