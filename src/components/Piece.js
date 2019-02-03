@@ -36,6 +36,16 @@ class Piece extends Component {
     this.props.setState(newState);
   };
 
+  changeBackgroundColorInput = (e) => {
+    this.setState({
+      backgroundColorInput: e.target.value
+    });
+  }
+
+  saveBackgroundColor = () => {
+    this.changePiece('backgroundColor', this.state.backgroundColorInput);
+  }
+
   render() {
     const pieceType = this.props.data.type;
 
@@ -47,6 +57,15 @@ class Piece extends Component {
 
     let editButtonDone = <button onClick={this.hideEditTools}
       className="edit-piece-done">done</button>
+
+    let editBackgroundColorForm = (
+      <div>
+        background color:
+        <input value={this.state.backgroundColorInput || ''}
+          onChange={this.changeBackgroundColorInput}/>
+        <button onClick={this.saveBackgroundColor}>save</button>
+      </div>
+    );
 
     let classNames = ['piece', pieceType];
 
@@ -82,16 +101,6 @@ class Piece extends Component {
     }
 
     if (pieceType === 'banner') {
-      const changeBackgroundColorInput = (e) => {
-        this.setState({
-          backgroundColorInput: e.target.value
-        });
-      };
-
-      const saveBackgroundColor = () => {
-        this.changePiece('backgroundColor', this.state.backgroundColorInput);
-      };
-
       return (
         <Banner piece={this.props.piece}
           state={this.props.state}
@@ -101,9 +110,7 @@ class Piece extends Component {
           editButtonDone={editButtonDone}
           deleteButton={deleteButton}
           classNames={classNames}
-          backgroundColorInput={this.state.backgroundColorInput}
-          changeBackgroundColorInput={changeBackgroundColorInput}
-          saveBackgroundColor={saveBackgroundColor}
+          editBackgroundColorForm={editBackgroundColorForm}
           >
         </Banner>
       );

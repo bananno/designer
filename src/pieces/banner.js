@@ -33,14 +33,8 @@ const banner = (props) => {
         <br/>
         {
           currentImage === 'none'
-          ? (
-            <div>
-              background color:
-              <input value={props.backgroundColorInput || ''}
-                onChange={props.changeBackgroundColorInput}/>
-              <button onClick={props.saveBackgroundColor}>save</button>
-            </div>
-          ) : null
+          ? props.editBackgroundColorForm
+          : null
         }
         size:
         <EditSize piece={props.piece} changePiece={props.changePiece}/>
