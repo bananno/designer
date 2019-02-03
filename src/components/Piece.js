@@ -7,7 +7,8 @@ import DeleteButton from '../bits/deleteButton.js';
 
 class Piece extends Component {
   state = {
-    showEditTools: false
+    showEditTools: false,
+    backgroundColorInput: this.props.piece.backgroundColor,
   };
 
   showEditTools = () => {
@@ -81,6 +82,16 @@ class Piece extends Component {
     }
 
     if (pieceType === 'banner') {
+      const changeBackgroundColorInput = (e) => {
+        this.setState({
+          backgroundColorInput: e.target.value
+        });
+      };
+
+      const saveBackgroundColor = () => {
+        this.changePiece('backgroundColor', this.state.backgroundColorInput);
+      };
+
       return (
         <Banner piece={this.props.piece}
           state={this.props.state}
@@ -90,6 +101,9 @@ class Piece extends Component {
           editButtonDone={editButtonDone}
           deleteButton={deleteButton}
           classNames={classNames}
+          backgroundColorInput={this.state.backgroundColorInput}
+          changeBackgroundColorInput={changeBackgroundColorInput}
+          saveBackgroundColor={saveBackgroundColor}
           >
         </Banner>
       );
