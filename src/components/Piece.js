@@ -37,15 +37,12 @@ class Piece extends Component {
   }
 
   changeBackgroundColorInput = (e) => {
-    console.log('changeBackgroundColorInput')
     this.setState({
       backgroundColorInput: e.target.value
     });
   }
 
   saveBackgroundColor = () => {
-    console.log('saveBackgroundColor')
-    console.log(this.state.backgroundColorInput)
     this.changePiece('backgroundColor', this.state.backgroundColorInput);
   }
 
